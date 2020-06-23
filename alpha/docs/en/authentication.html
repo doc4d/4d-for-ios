@@ -87,6 +87,7 @@
 <p>In short, the principle is the following:</p>
 <h3><a class="anchor" aria-hidden="true" id="1-activate-the-login-form"></a><a href="#1-activate-the-login-form" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. Activate the login form</h3>
 <p>You integrate a login form into your app, from the project editor in the Publishing section.</p>
+<p><img src="/4d-for-ios/alpha/docs/assets/en/authentication/email-authentication-publishing-section.png" alt="Email authentication activation"></p>
 <h3><a class="anchor" aria-hidden="true" id="2-enter-your-email-address"></a><a href="#2-enter-your-email-address" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Enter your email address</h3>
 <p>An email is required when the app is launched. When a user enters their email and clicks on the Login button, the On Mobile app Authentication is called and the user's session status should be updated to a &quot;pending&quot; status. A validation email is then sent to the user.</p>
 <h3><a class="anchor" aria-hidden="true" id="3-check-your-mailbox"></a><a href="#3-check-your-mailbox" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. Check your mailbox</h3>
@@ -105,14 +106,14 @@
 <p>Call the Mobile <strong>App Email Checker</strong> method in the <strong>On Mobile App Authentification database</strong> method with the information provided by the mobile application:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$0</span>)
 <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$1</span>)
-<span class="hljs-variable">$0</span>:= Mobile App Email Checker (<span class="hljs-variable">$1</span>)
+<span class="hljs-variable">$0</span><span class="hljs-function">:= Mobile App Email Checker </span>(<span class="hljs-variable">$1</span>)
 
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="mobile-app-active-session"></a><a href="#mobile-app-active-session" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mobile App Active Session</h2>
 <p>Call the <strong>Activate sessions</strong> method in the <strong>On Web Connection</strong> database method with the Session ID parameter retrieved from the URL:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">C_TEXT</span>(<span class="hljs-variable">$1</span>)<span class="hljs-keyword">
 Case of</span> 
-: (<span class="hljs-function">Mobile App Active Session</span>(<span class="hljs-variable">$1</span>).success)
+<span class="hljs-function">: (Mobile App Active Session</span>(<span class="hljs-variable">$1</span>).success)
     <span class="hljs-comment">//add log if you want</span><span class="hljs-keyword">
 End case</span> 
 
@@ -137,9 +138,9 @@ You will find more information about this component in the <a href="https://gith
 +<span class="hljs-string">"\"&gt;Click Here to confirm your email.&lt;/a&gt;\"&lt;br&gt;"</span>
 
   <span class="hljs-comment">// Send mail</span>
-<span class="hljs-variable">$smtp</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"host"</span>;<span class="hljs-string">"smtp.gmail.com"</span>;<span class="hljs-string">"user"</span>;<span class="hljs-string">"myapplication@gmail.com"</span>;<span class="hljs-string">"password"</span>;<span class="hljs-string">"xxx"</span>)
-<span class="hljs-variable">$transporter</span>:=<span class="hljs-function">SMTP New transporter</span>(<span class="hljs-variable">$smtp</span>)
-<span class="hljs-variable">$status</span>:=<span class="hljs-variable">$transporter</span>.<span class="hljs-function">send</span>(<span class="hljs-variable">$mail</span>)
+<span class="hljs-variable">$smtp</span><span class="hljs-function">:=New object</span>(<span class="hljs-string">"host"</span>;<span class="hljs-string">"smtp.gmail.com"</span>;<span class="hljs-string">"user"</span>;<span class="hljs-string">"myapplication@gmail.com"</span>;<span class="hljs-string">"password"</span>;<span class="hljs-string">"xxx"</span>)
+<span class="hljs-variable">$transporter</span><span class="hljs-function">:=SMTP New transporter</span>(<span class="hljs-variable">$smtp</span>)
+<span class="hljs-variable">$status</span><span class="hljs-function">:=$transporter.send</span>(<span class="hljs-variable">$mail</span>)
 
   <span class="hljs-comment">// Configure response for 4D for iOS</span>
 <span class="hljs-variable">$response</span>:=New object
@@ -180,7 +181,7 @@ End if</span>
 <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$sessionFile</span>;<span class="hljs-variable">$sessionObject</span>)<span class="hljs-keyword">
 
 If</span> (<span class="hljs-variable">$1</span>=<span class="hljs-string">"/activation/@"</span>)
-    <span class="hljs-variable">$token</span>:=<span class="hljs-function">Substring</span>(<span class="hljs-variable">$1</span>;<span class="hljs-number">13</span>)<span class="hljs-keyword">
+    <span class="hljs-variable">$token</span><span class="hljs-function">:=Substring</span>(<span class="hljs-variable">$1</span>;<span class="hljs-number">13</span>)<span class="hljs-keyword">
 End if</span> 
 
 
@@ -191,11 +192,11 @@ End if</span><span class="hljs-keyword">
 
 If</span> (<span class="hljs-variable">$session</span>#<span class="hljs-string">""</span>)
       <span class="hljs-comment">//get session folder</span>
-    <span class="hljs-variable">$sessionFile</span>:=<span class="hljs-function">Folder</span>(fk mobileApps folder).<span class="hljs-function">folder</span>(<span class="hljs-variable">$session</span>).<span class="hljs-function">file</span>(<span class="hljs-variable">$token</span>)
-    <span class="hljs-variable">$sessionObject</span>:=<span class="hljs-function">JSON Parse</span>(<span class="hljs-variable">$sessionFile</span>.<span class="hljs-function">getText</span>())
+    <span class="hljs-variable">$sessionFile</span><span class="hljs-function">:=Folder(fk mobileApps folder).folder($session).file</span>(<span class="hljs-variable">$token</span>)
+    <span class="hljs-variable">$sessionObject</span><span class="hljs-function">:=JSON Parse($sessionFile.getText</span>())
       <span class="hljs-comment">//update status value</span>
     <span class="hljs-variable">$sessionObject</span>.status:=<span class="hljs-string">"accepted"</span>
-    <span class="hljs-variable">$sessionFile</span>.<span class="hljs-function">setText</span>(<span class="hljs-function">JSON Stringify</span>(<span class="hljs-variable">$sessionObject</span>))<span class="hljs-keyword">
+    <span class="hljs-variable">$sessionFile</span><span class="hljs-function">.setText(JSON Stringify</span>(<span class="hljs-variable">$sessionObject</span>))<span class="hljs-keyword">
     Use</span> (Storage.pendingSessions)
           <span class="hljs-comment">//delete pending session</span>
         <span class="hljs-function">OB REMOVE</span>(Storage.pendingSessions;<span class="hljs-variable">$token</span>)<span class="hljs-keyword">

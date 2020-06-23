@@ -120,19 +120,19 @@ href="https://github.com/4d-for-ios/tutorial-Actions/archive/cf16581214a8a6e4e40
 
 Case of</span>
 
-    : (<span class="hljs-variable">$request</span>.action=<span class="hljs-string">"taskDone"</span>)
+    <span class="hljs-function">: </span>(<span class="hljs-variable">$request</span>.action=<span class="hljs-string">"taskDone"</span>)
 
-        <span class="hljs-variable">$o</span>:=<span class="hljs-function">New object</span>(\
+        <span class="hljs-variable">$o</span><span class="hljs-function">:=New object</span>(\
         <span class="hljs-string">"dataClass"</span>;<span class="hljs-variable">$context</span>.dataClass;\
         <span class="hljs-string">"ID"</span>;<span class="hljs-variable">$context</span>.entity.primaryKey;\
         <span class="hljs-string">"CompletePercentage"</span>;<span class="hljs-number">100</span>)
 
-        <span class="hljs-variable">$result</span>:=modifyStatus (<span class="hljs-variable">$o</span>)<span class="hljs-keyword">
+        <span class="hljs-variable">$result</span><span class="hljs-function">:=modifyStatus </span>(<span class="hljs-variable">$o</span>)<span class="hljs-keyword">
 
     Else</span>
 
           <span class="hljs-comment">// Unknown request</span>
-        <span class="hljs-variable">$result</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"success"</span>;<span class="hljs-literal">False</span>)<span class="hljs-keyword">
+        <span class="hljs-variable">$result</span><span class="hljs-function">:=New object</span>(<span class="hljs-string">"success"</span>;<span class="hljs-literal">False</span>)<span class="hljs-keyword">
 
 End case</span>
 
@@ -148,7 +148,7 @@ End case</span>
 
 <span class="hljs-variable">$in</span>:=<span class="hljs-variable">$1</span>
 
-<span class="hljs-variable">$selection</span>:=ds[<span class="hljs-variable">$in</span>.dataClass].<span class="hljs-function">query</span>(<span class="hljs-string">"ID = :1"</span>;<span class="hljs-function">String</span>(<span class="hljs-variable">$in</span>.ID))<span class="hljs-keyword">
+<span class="hljs-variable">$selection</span><span class="hljs-function">:=ds[$in.dataClass].query("ID = :1";String</span>(<span class="hljs-variable">$in</span>.ID))<span class="hljs-keyword">
 
 If</span> (<span class="hljs-variable">$selection</span>.length=<span class="hljs-number">1</span>)
 
@@ -158,7 +158,7 @@ If</span> (<span class="hljs-variable">$selection</span>.length=<span class="hlj
 
     <span class="hljs-variable">$entity</span>.Status:=<span class="hljs-number">3</span>
 
-    <span class="hljs-variable">$status</span>:=<span class="hljs-variable">$entity</span>.<span class="hljs-function">save</span>()
+    <span class="hljs-variable">$status</span><span class="hljs-function">:=$entity.save</span>()
 
     <span class="hljs-variable">$out</span>:=New object<span class="hljs-keyword">
 
@@ -210,26 +210,26 @@ End if</span>
 
 Case of</span>
 
-    : (<span class="hljs-variable">$request</span>.action=<span class="hljs-string">"taskDone"</span>)
+    <span class="hljs-function">: </span>(<span class="hljs-variable">$request</span>.action=<span class="hljs-string">"taskDone"</span>)
 
-        <span class="hljs-variable">$o</span>:=<span class="hljs-function">New object</span>(\
+        <span class="hljs-variable">$o</span><span class="hljs-function">:=New object</span>(\
         <span class="hljs-string">"dataClass"</span>;<span class="hljs-variable">$context</span>.dataClass;\
         <span class="hljs-string">"ID"</span>;<span class="hljs-variable">$context</span>.entity.primaryKey;\
         <span class="hljs-string">"CompletePercentage"</span>;<span class="hljs-number">100</span>)
 
-        <span class="hljs-variable">$result</span>:=modifyStatus (<span class="hljs-variable">$o</span>)
+        <span class="hljs-variable">$result</span><span class="hljs-function">:=modifyStatus </span>(<span class="hljs-variable">$o</span>)
 
-    : (<span class="hljs-variable">$request</span>.action=<span class="hljs-string">"postponeAll"</span>)
+    <span class="hljs-function">: </span>(<span class="hljs-variable">$request</span>.action=<span class="hljs-string">"postponeAll"</span>)
 
-        <span class="hljs-variable">$o</span>:=<span class="hljs-function">New object</span>(\
+        <span class="hljs-variable">$o</span><span class="hljs-function">:=New object</span>(\
         <span class="hljs-string">"dataClass"</span>;<span class="hljs-variable">$context</span>.dataClass;\
         <span class="hljs-string">"Status"</span>;<span class="hljs-number">4</span>)
 
-        <span class="hljs-variable">$result</span>:= postponeAll (<span class="hljs-variable">$o</span>)<span class="hljs-keyword">
+        <span class="hljs-variable">$result</span><span class="hljs-function">:= postponeAll </span>(<span class="hljs-variable">$o</span>)<span class="hljs-keyword">
     Else</span>
 
           <span class="hljs-comment">// Unknown request</span>
-        <span class="hljs-variable">$result</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"success"</span>;<span class="hljs-literal">False</span>)<span class="hljs-keyword">
+        <span class="hljs-variable">$result</span><span class="hljs-function">:=New object</span>(<span class="hljs-string">"success"</span>;<span class="hljs-literal">False</span>)<span class="hljs-keyword">
 
 End case</span>
 
@@ -245,14 +245,14 @@ End case</span>
 
 <span class="hljs-variable">$in</span>:=<span class="hljs-variable">$1</span>
 
-<span class="hljs-variable">$out</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"success"</span>;<span class="hljs-literal">False</span>)<span class="hljs-keyword">
+<span class="hljs-variable">$out</span><span class="hljs-function">:=New object</span>(<span class="hljs-string">"success"</span>;<span class="hljs-literal">False</span>)<span class="hljs-keyword">
 
 If</span> (<span class="hljs-variable">$in</span>.dataClass#<span class="hljs-literal">Null</span>)<span class="hljs-keyword">
 
-    For each</span> (<span class="hljs-variable">$entity</span>;ds[<span class="hljs-variable">$in</span>.dataClass].<span class="hljs-function">all</span>())
+    For each</span> <span class="hljs-function">($entity;ds[$in.dataClass].all</span>())
 
         <span class="hljs-variable">$entity</span>.Status:=<span class="hljs-variable">$in</span>.Status
-        <span class="hljs-variable">$entity</span>.<span class="hljs-function">save</span>()<span class="hljs-keyword">
+        <span class="hljs-variable">$entity</span><span class="hljs-function">.save</span>()<span class="hljs-keyword">
 
     End for each</span>
 
@@ -261,7 +261,7 @@ If</span> (<span class="hljs-variable">$in</span>.dataClass#<span class="hljs-li
 
 Else</span>
 
-    <span class="hljs-variable">$out</span>.errors:=<span class="hljs-function">New collection</span>(<span class="hljs-string">"No Selection"</span>)<span class="hljs-keyword">
+    <span class="hljs-variable">$out</span><span class="hljs-function">.errors:=New collection</span>(<span class="hljs-string">"No Selection"</span>)<span class="hljs-keyword">
 
 End if</span>
 

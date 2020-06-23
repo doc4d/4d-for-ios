@@ -93,15 +93,15 @@ href="https://github.com/4d-for-ios/tutorial-RelationsActions/archive/6c649733f5
 <p><img src="/4d-for-ios/alpha/docs/assets/en/relations/create-addProject-Method-4D-for-iOS-relation-parent-ID.png" alt="create addProject Method"></p>
 <h2><a class="anchor" aria-hidden="true" id="método-on-mobile-app-action"></a><a href="#método-on-mobile-app-action" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Método On Mobile App Action</h2>
 <p>The only thing you have to do is defining the <strong>addProject</strong> action in the <strong>On Mobile App Action method</strong> as follows :</p>
-<pre><code class="hljs css language-4d">: (<span class="hljs-variable">$request</span>.action=<span class="hljs-string">"addProjects"</span>)
+<pre><code class="hljs css language-4d"><span class="hljs-function">: </span>(<span class="hljs-variable">$request</span>.action=<span class="hljs-string">"addProjects"</span>)
 
-<span class="hljs-variable">$o</span>:=<span class="hljs-function">New object</span>(\
+<span class="hljs-variable">$o</span><span class="hljs-function">:=New object</span>(\
 <span class="hljs-string">"dataClass"</span>;<span class="hljs-variable">$context</span>.dataClass;\
 <span class="hljs-string">"parent"</span>;<span class="hljs-variable">$context</span>.parent;\
 <span class="hljs-string">"entity"</span>;<span class="hljs-variable">$context</span>.entity;\
 <span class="hljs-string">"parameters"</span>;<span class="hljs-variable">$parameters</span>)
 
-<span class="hljs-variable">$result</span>:=addProject (<span class="hljs-variable">$o</span>)
+<span class="hljs-variable">$result</span><span class="hljs-function">:=addProject </span>(<span class="hljs-variable">$o</span>)
 
 
 </code></pre>
@@ -113,11 +113,11 @@ href="https://github.com/4d-for-ios/tutorial-RelationsActions/archive/6c649733f5
 <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$entity</span>;<span class="hljs-variable">$in</span>;<span class="hljs-variable">$out</span>)
 
 <span class="hljs-variable">$in</span>:=<span class="hljs-variable">$1</span>
-<span class="hljs-variable">$out</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"success"</span>;<span class="hljs-literal">False</span>)<span class="hljs-keyword">
+<span class="hljs-variable">$out</span><span class="hljs-function">:=New object</span>(<span class="hljs-string">"success"</span>;<span class="hljs-literal">False</span>)<span class="hljs-keyword">
 
 If</span> (<span class="hljs-variable">$in</span>.dataClass#<span class="hljs-literal">Null</span>)
 
-    <span class="hljs-variable">$entity</span>:=ds[<span class="hljs-variable">$in</span>.dataClass].<span class="hljs-function">new</span>()  <span class="hljs-comment">//Crear una referencia</span><span class="hljs-keyword">
+    <span class="hljs-variable">$entity</span><span class="hljs-function">:=ds[$in.dataClass].new</span>()  <span class="hljs-comment">//Crear una referencia</span><span class="hljs-keyword">
 
     For each</span> (<span class="hljs-variable">$key</span>;<span class="hljs-variable">$in</span>.parameters)
 
@@ -127,13 +127,13 @@ If</span> (<span class="hljs-variable">$in</span>.dataClass#<span class="hljs-li
 
     <span class="hljs-variable">$primaryKey</span>:=<span class="hljs-variable">$in</span>.parent.primaryKey   <span class="hljs-comment">//Get parent primary key</span>
 
-    <span class="hljs-variable">$parent</span>:=ds[<span class="hljs-variable">$in</span>.parent.dataClass].<span class="hljs-function">get</span>(<span class="hljs-variable">$primaryKey</span>)
+    <span class="hljs-variable">$parent</span><span class="hljs-function">:=ds[$in.parent.dataClass].get</span>(<span class="hljs-variable">$primaryKey</span>)
 
   <span class="hljs-variable">$inverseRelationName</span>:=<span class="hljs-variable">$in</span>.entity.relationName   <span class="hljs-comment">//Obtener nombre de la relación padre</span>
 
     <span class="hljs-variable">$entity</span>[<span class="hljs-variable">$inverseRelationName</span>]:=<span class="hljs-variable">$parent</span>
 
-    <span class="hljs-variable">$status</span>:=<span class="hljs-variable">$entity</span>.<span class="hljs-function">save</span>()  <span class="hljs-comment">//guardar la entidad</span>
+    <span class="hljs-variable">$status</span><span class="hljs-function">:=$entity.save</span>()  <span class="hljs-comment">//guardar la entidad</span>
 
     <span class="hljs-variable">$out</span>.success:=<span class="hljs-literal">True</span>  <span class="hljs-comment">// notificar App que la acción es exitosa</span>
 
@@ -145,7 +145,7 @@ If</span> (<span class="hljs-variable">$in</span>.dataClass#<span class="hljs-li
 
 Else</span> 
 
-    <span class="hljs-variable">$out</span>.errors:=<span class="hljs-function">New collection</span>(<span class="hljs-string">"No Selection"</span>)<span class="hljs-keyword">
+    <span class="hljs-variable">$out</span><span class="hljs-function">.errors:=New collection</span>(<span class="hljs-string">"No Selection"</span>)<span class="hljs-keyword">
 
 End if</span> 
 
