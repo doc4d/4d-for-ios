@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="de"><head><meta name="docsearch:version" content="18 R4 BETA"/><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Many to One relations · 4D for iOS</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="4D v17 R5 includes a new concept: Many to One relations&lt;div class = &quot;tips&quot;&gt; "/><meta name="docsearch:language" content="de"/><meta property="og:title" content="Many to One relations · 4D for iOS"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docdoc4d.github.io/4d-for-ios/index.html"/><meta property="og:description" content="4D v17 R5 includes a new concept: Many to One relations&lt;div class = &quot;tips&quot;&gt; "/><meta property="og:image" content="https://docdoc4d.github.io/4d-for-ios/img/logo4DforiOS.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docdoc4d.github.io/4d-for-ios/img/logo4DforiOS.png"/><link rel="shortcut icon" href="/4d-for-ios/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/ocean.min.css"/><script>
+<!DOCTYPE html><html lang="de"><head><meta name="docsearch:version" content="18 R4 BETA"/><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Many to One relations · 4D for iOS</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="4D v17 R5 includes a new concept: Many to One relations"/><meta name="docsearch:language" content="de"/><meta property="og:title" content="Many to One relations · 4D for iOS"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docdoc4d.github.io/4d-for-ios/index.html"/><meta property="og:description" content="4D v17 R5 includes a new concept: Many to One relations"/><meta property="og:image" content="https://docdoc4d.github.io/4d-for-ios/img/logo4DforiOS.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docdoc4d.github.io/4d-for-ios/img/logo4DforiOS.png"/><link rel="shortcut icon" href="/4d-for-ios/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/ocean.min.css"/><script>
               (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
               (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
               m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -74,15 +74,15 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/4D-for-iOS/edit/develop/docs/Relations-N-to-one-relations.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Many to One relations</h1></header><article><div><span><p>4D v17 R5 includes a new concept: Many to One relations<div class = "tips"></p>
-<p><strong>HINWEIS</strong></p>
-<p>In this tutorial, we will use the relation names between your tables. Giving descriptive relation names can make your project structure definition easier.</div></p>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/4D-for-iOS/edit/develop/docs/Relations-N-to-one-relations.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Many to One relations</h1></header><article><div><span><p>4D v17 R5 includes a new concept: Many to One relations</p>
+<div markdown="1" class = "tips">
+**HINWEIS**
+In this tutorial, we will use the relation names between your tables. Giving descriptive relation names can make your project structure definition easier.
+</div>
 <p>Let's get started by downloading the Starter Project:</p>
-<div style="text-align: center; margin-top: 20px; margin-bottom: 20px">
-  <p>
-<p><a class="button"
-href="https://github.com/4d-for-ios/tutorial-ManyToOneRelations/releases/latest/download/tutorial-ManyToOneRelations.zip">MANY TO ONE STARTER PROJECT</a></p>
-  </p>
+<div markdown="1" style="text-align: center; margin-top: 20px; margin-bottom: 20px">
+<a class="button"
+href="https://github.com/4d-for-ios/tutorial-ManyToOneRelations/releases/latest/download/tutorial-ManyToOneRelations.zip">MANY TO ONE STARTER PROJECT</a>
 </div>
 <p>Here we want to display the category for each task in the detail form of your generated app. To do so, open the <strong>StarteriOSProject</strong> from <strong>Open &gt; Mobile Project...</strong></p>
 <p>Then go right to your Structure section and select the <strong>Task table</strong>.</p>
@@ -95,9 +95,11 @@ href="https://github.com/4d-for-ios/tutorial-ManyToOneRelations/releases/latest/
 <p><img src="/4d-for-ios/docs/assets/en/relations/select-link-from-structure.png" alt="Select link from structure section"></p>
 <ul>
 <li><p>This field will operate as any other field for the rest of the app creation process</p></li>
-<li><p>You can also filter your app content using related fields from the Data section. To do so enter <code>TaskCategory.Name != 'Personal'</code> in the Filter query field to exclude personal tasks.</p>
-<p><img src="/4d-for-ios/docs/assets/en/relations/Related-field-from-Data-section.png" alt="Related field from Data section"></p></li>
-<li><p>You can then select an <strong>icon</strong> as well as <strong>formatters</strong> and define <strong>short and long labels</strong> from the Labels and Icons section</p></li>
+<li><p>You can also filter your app content using related fields from the Data section. To do so enter <code>TaskCategory.Name != 'Personal'</code> in the Filter query field to exclude personal tasks.</p></li>
+</ul>
+<p><img src="/4d-for-ios/docs/assets/en/relations/Related-field-from-Data-section.png" alt="Related field from Data section"></p>
+<ul>
+<li>You can then select an <strong>icon</strong> as well as <strong>formatters</strong> and define <strong>short and long labels</strong> from the Labels and Icons section</li>
 </ul>
 <p><img src="/4d-for-ios/docs/assets/en/relations/related-field-from-labels-icons.png" alt="Related field from Labels and Icons section"></p>
 <ul>
