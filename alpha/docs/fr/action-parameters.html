@@ -156,7 +156,7 @@ href="https://github.com/4d-for-ios/tutorial-ActionParameters/archive/159a7b73bd
 
 <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$o</span>;<span class="hljs-variable">$context</span>;<span class="hljs-variable">$request</span>;<span class="hljs-variable">$result</span>;<span class="hljs-variable">$parameters</span>)
 
-<span class="hljs-variable">$request</span>:=<span class="hljs-variable">$1  </span><span class="hljs-comment">// Informations provided by mobile application</span>
+<span class="hljs-variable">$request</span>:=<span class="hljs-variable">$1  </span><span class="hljs-comment">// Informations fournies par l'application mobile</span>
 
 <span class="hljs-variable">$context</span>:=<span class="hljs-variable">$request</span>.context
 <span class="hljs-variable">$parameters</span>:=<span class="hljs-variable">$request</span>.parameters<span class="hljs-keyword">
@@ -165,7 +165,7 @@ Case of</span>
 
     : (<span class="hljs-variable">$request</span>.action=<span class="hljs-string">"addTasks"</span>)
 
-          <span class="hljs-comment">// Insert here the code for the action "Add…"</span>
+          <span class="hljs-comment">// Insérer ici le code pour l'action "Add…"</span>
 
         <span class="hljs-variable">$o</span>:=<span class="hljs-function">New object</span>(\
         <span class="hljs-string">"dataClass"</span>;<span class="hljs-variable">$context</span>.dataClass;\
@@ -175,7 +175,7 @@ Case of</span>
 
     : (<span class="hljs-variable">$request</span>.action=<span class="hljs-string">"editTasks"</span>)
 
-          <span class="hljs-comment">// Insert here the code for the action "Edit…"</span>
+          <span class="hljs-comment">// Insérer ici le code pour l'action "Edit…"</span>
 
         <span class="hljs-variable">$o</span>:=<span class="hljs-function">New object</span>(\
         <span class="hljs-string">"dataClass"</span>;<span class="hljs-variable">$context</span>.dataClass;\
