@@ -5,13 +5,13 @@ title: Criar uma ficha em App Store
 
 > **OBJETIVOS**
 > 
-> * Create an App ID on your Developer Account
-> * Create your app in App Store Connect
+> * Criar um identificador de aplicação em sua conta de desenvolvedor
+> * Criar sua aplicação na App Store Connect
 
 
 > **PRÉ-REQUISITOS**
 > 
-> [Apple Developer Program for organization](register-apple-developer-program-organization.html) or [individual](register-apple-developer-program-individual.html)
+> [Apple Developer Program para empresas](register-apple-developer-program-organization.html) ou [particulares](register-apple-developer-program-individual.html)
 
 
 ## PASSO 1. Criar uma ID de aplicação
