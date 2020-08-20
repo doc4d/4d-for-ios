@@ -183,9 +183,9 @@ Si vous possédez déjà une icône pour votre application 4D, vous pouvez la gl
 **Comment puis-je tester mon application ?**
 </summary>
 
-4D for iOS vous permet de tester vos applications dans le [Simulateur](simulator.html). To test your app on your iOS device you need to have a **paying Apple developer account** (install-device.html) (iPhone and iPad).
+4D for iOS vous permet de tester vos applications dans le [Simulateur](simulator.html). Pour tester votre application sur votre appareil iOS, il vous faut un **compte Apple Developer payant** (install-device.html) (iPhone et iPad).
 
-**Note:** to intall your app with a **free developer account**, you can open your generated iOS project and install your app using Xcode.
+**Note :** Pour installer votre application avec un **compte Apple Developer gratuit**, vous pouvez ouvrir votre projet iOS généré et installer votre application via Xcode.
 
 </details>
 
