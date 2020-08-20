@@ -3,11 +3,11 @@ id: actions-getting-started
 title: Prise en main
 ---
 
-> **OBJECTIFS **
+> **OBJECTIFS**
 > 
 > Utiliser des actions dans l'application iOS.
 
-> **CONDITIONS PRÉALABLES **
+> **CONDITIONS PRÉALABLES**
 > 
 > Cliquez [ici](prerequisites.html) pour pouvoir commencer !
 
