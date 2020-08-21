@@ -77,13 +77,13 @@
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/4D-for-iOS/edit/develop/docs/DeployAppStore-CreateiTunesConnectRecord.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Criar uma ficha em App Store</h1></header><article><div><span><blockquote>
 <p><strong>OBJETIVOS</strong></p>
 <ul>
-<li>Create an App ID on your Developer Account</li>
-<li>Create your app in App Store Connect</li>
+<li>Criar um identificador de aplicação em sua conta de desenvolvedor</li>
+<li>Criar sua aplicação na App Store Connect</li>
 </ul>
 </blockquote>
 <blockquote>
 <p><strong>PRÉ-REQUISITOS</strong></p>
-<p><a href="register-apple-developer-program-organization.html">Apple Developer Program for organization</a> or <a href="register-apple-developer-program-individual.html">individual</a></p>
+<p><a href="register-apple-developer-program-organization.html">Apple Developer Program para empresas</a> ou <a href="register-apple-developer-program-individual.html">particulares</a></p>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="passo-1-criar-uma-id-de-aplicação"></a><a href="#passo-1-criar-uma-id-de-aplicação" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PASSO 1. Criar uma ID de aplicação</h2>
 <h4><a class="anchor" aria-hidden="true" id="o-que-é-uma-identificação-id-de-aplicação"></a><a href="#o-que-é-uma-identificação-id-de-aplicação" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>O que é uma identificação (ID) de aplicação?</h4>
@@ -91,8 +91,8 @@
 <blockquote>
 <p>**NOTA **</p>
 <ul>
-<li>If you have chosen an Apple Developer Account as an individual, your account is available immediately and you can create your App ID.</li>
-<li>If you have chosen an Apple Developer Account as an organization, you must wait for Apple validation to create your App ID.</li>
+<li>Se escolher uma Conta Apple Developer como indivíduo, sua conta estará disponível imediatamente e pode criar sua App ID.</li>
+<li>Se escolher uma conta Apple Developer como uma empresa, tem que esperar até a validação de Apple para criar sua App ID.</li>
 </ul>
 </blockquote>
 <p>To create your App ID, go to your developer account and select <a href="https://developer.apple.com/account/ios/identifier/bundle">Certificates, IDs &amp; Profile</a></p>
@@ -130,7 +130,7 @@
 <p><img src="/4d-for-ios/18/docs/assets/en/deploy-app-store/Change-BundleID-Xcode-Project.png" alt="Change BundleID"></p>
 <blockquote>
 <p>**NOTA **</p>
-<p>If your Bundle ID is not available, it may already be used by another app in the App Store. You'll need to change yours in your Xcode project.</p>
+<p>Se seu Bundle ID não estiver disponível, pode ser que já esteja sendo usada por outro app na App Store. Terá que mudar a sua no projeto Xcode.</p>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="passo-4-informação-sobre-a-aplicação"></a><a href="#passo-4-informação-sobre-a-aplicação" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PASSO 4. Informação sobre a aplicação</h2>
 <p>From App Store Connect &gt; App Information:</p>
@@ -144,13 +144,13 @@
 <p>This is where you define the price for your app.</p>
 <blockquote>
 <p><strong>DICAS</strong></p>
-<p>You can define limited-time discounts by specifying start and end dates.</p>
+<p>Pode definir descontos por tempo limitado especificando as datas de começo e fim.</p>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="passo-6-prepare-para-a-inscrição"></a><a href="#passo-6-prepare-para-a-inscrição" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PASSO 6. Prepare para a inscrição</h2>
 <p>Add all of the assets for your app to appear in the App Store in <strong>Version Information</strong>:</p>
 <blockquote>
 <p><strong>DICAS</strong></p>
-<p>You can generate all of your screenshots in Simulator (File &gt; New Screen Shot).</p>
+<p>Pode gerar todas as suas capturas de tela no Simulator (File&gt;New Screen Shot).</p>
 </blockquote>
 <p><img src="/4d-for-ios/18/docs/assets/en/deploy-app-store/Prepare-for-submission-screenshot-description.png" alt="Prepare para a inscrição"></p>
 <ul>
