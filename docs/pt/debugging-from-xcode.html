@@ -75,14 +75,14 @@
               }
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/4D-for-iOS/edit/develop/docs/Debugging-Xcode.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">From Xcode</h1></header><article><div><span><p>If you have issues during the build process, you can open your generated project with Xcode by selecting the <strong>Open the product with Xcode</strong> option from the <strong>Project</strong> Menu.</p>
-<p><img src="/4d-for-ios/docs/assets/en/debugging/open-project-Xcode.png" alt="Open the project with Xcode"></p>
+<p><img src="/4d-for-ios/docs/assets/en/debugging/open-project-Xcode.png" alt="Abrir o projeto com Xcode"></p>
 <p>From here, select <strong>launch your application</strong> in the Simulator by clicking on the <strong>Build</strong> button and get all of the logs at the bottom of the Xcode workspace.</p>
-<p><img src="/4d-for-ios/docs/assets/en/debugging/Xcode-logs.png" alt="Xcode logs"></p>
+<p><img src="/4d-for-ios/docs/assets/en/debugging/Xcode-logs.png" alt="Históricos de Xcode"></p>
 <h2><a class="anchor" aria-hidden="true" id="logger-registrador"></a><a href="#logger-registrador" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logger (registrador)</h2>
 <p>A logger is an object that allows you to log and trace operations.</p>
 <p>For this, we use the <a href="https://github.com/DaveWoodCom/XCGLogger">XCGLogger</a> framework.</p>
 <p>You will find the logger settings definition in your Xcode project/Settings/Settings.plist file.</p>
-<p><img src="/4d-for-ios/docs/assets/en/debugging/settings-plist-xcode.png" alt="Xcode logs"></p>
+<p><img src="/4d-for-ios/docs/assets/en/debugging/settings-plist-xcode.png" alt="Históricos de Xcode"></p>
 <h2><a class="anchor" aria-hidden="true" id="níveis"></a><a href="#níveis" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Níveis</h2>
 <p>You can filter and display different log levels in your console by adding log.level to your Settings.plist file.</p>
 <p>To do so, add a row by right clicking inside the Settings.plist file and enter:</p>
@@ -100,12 +100,12 @@
 <li>4 for error</li>
 <li>5 for severe</li>
 </ul>
-<p><img src="/4d-for-ios/docs/assets/en/debugging/log-level.png" alt="Log level"></p>
+<p><img src="/4d-for-ios/docs/assets/en/debugging/log-level.png" alt="Nível do histórico"></p>
 <p>For this example, if you set the log.level <strong>Value</strong> to 3, you will get <strong>&quot;warning, error and sever&quot;</strong> in your Xcode console.</p>
 <h2><a class="anchor" aria-hidden="true" id="formato"></a><a href="#formato" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Formato</h2>
 <p>Pode exibir indicadores visuais diferentes no console Xcode para <strong>ressaltar diferentes tipos de log</strong>.</p>
 <p>To do so, just open your Xcode project/Settings/Settings.plist file.</p>
-<p><img src="/4d-for-ios/docs/assets/en/debugging/log-format.png" alt="Log Format"></p>
+<p><img src="/4d-for-ios/docs/assets/en/debugging/log-format.png" alt="Formato do histórico"></p>
 <h3><a class="anchor" aria-hidden="true" id="emoticons"></a><a href="#emoticons" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Emoticons</h3>
 <ul>
 <li>prefixes[.verbose] = &quot;🗯&quot;</li>
