@@ -148,7 +148,7 @@ Case of
 
     : ($request.action="deleteTasks")
 
-          // Insert here the code for the action "Remove"
+          // Insertar aquí el código para la acción "Remove"
 
         $o:=New object(\
         "dataClass";$context.dataClass;\
@@ -158,7 +158,7 @@ Case of
 
     : ($request.action="sendComment")
 
-          // Insert here the code for the action "Send Comment"
+          // Insertar aquí el código para la acción "Send Comment"
 
         $o:=New object(\
         "dataClass";$context.dataClass;\
@@ -170,8 +170,7 @@ Case of
 
     Else 
 
-          // Unknown action
-
+          // Acción desconocida
 End case 
 
 $0:=$result
@@ -354,18 +353,18 @@ If ($selection.length=1)
 
     $status:=$transporter.send($email)
     If ($status.success)
-        $out.success:=True  // notify App that action success
+        $out.success:=True  // notificar a la App que la acción fue exitosa
         $out.statusText:="Mail sent"
 
     Else 
-        $out.success:=False  // notify App that action failed
+        $out.success:=False  // notificar a la App que la acción falló
         $out.statusText:="Mail not sent"
 
     End if 
 
 Else 
 
-    $out.success:=False  // notify App that action failed
+    $out.success:=False  // notificar a la App que la acción falló
 
 End if 
 
