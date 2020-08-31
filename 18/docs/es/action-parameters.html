@@ -187,7 +187,7 @@ Case of</span>
 
     : (<span class="hljs-variable">$request</span>.action=<span class="hljs-string">"deleteTasks"</span>)
 
-          <span class="hljs-comment">// Insert here the code for the action "Remove"</span>
+          <span class="hljs-comment">// Insertar aquí el código para la acción "Remove"</span>
 
         <span class="hljs-variable">$o</span>:=<span class="hljs-function">New object</span>(\
         <span class="hljs-string">"dataClass"</span>;<span class="hljs-variable">$context</span>.dataClass;\
@@ -197,7 +197,7 @@ Case of</span>
 
     : (<span class="hljs-variable">$request</span>.action=<span class="hljs-string">"sendComment"</span>)
 
-          <span class="hljs-comment">// Insert here the code for the action "Send Comment"</span>
+          <span class="hljs-comment">// Insertar aquí el código para la acción "Send Comment"</span>
 
         <span class="hljs-variable">$o</span>:=<span class="hljs-function">New object</span>(\
         <span class="hljs-string">"dataClass"</span>;<span class="hljs-variable">$context</span>.dataClass;\
@@ -209,8 +209,7 @@ Case of</span>
 
     Else</span> 
 
-          <span class="hljs-comment">// Unknown action</span><span class="hljs-keyword">
-
+          <span class="hljs-comment">// Acción desconocida</span><span class="hljs-keyword">
 End case</span> 
 
 <span class="hljs-variable">$0</span>:=<span class="hljs-variable">$result</span>
@@ -378,18 +377,18 @@ If</span> (<span class="hljs-variable">$selection</span>.length=<span class="hlj
 
     <span class="hljs-variable">$status</span>:=<span class="hljs-variable">$transporter</span>.<span class="hljs-function">send</span>(<span class="hljs-variable">$email</span>)<span class="hljs-keyword">
     If</span> (<span class="hljs-variable">$status</span>.success)
-        <span class="hljs-variable">$out</span>.success:=<span class="hljs-literal">True</span>  <span class="hljs-comment">// notify App that action success</span>
+        <span class="hljs-variable">$out</span>.success:=<span class="hljs-literal">True</span>  <span class="hljs-comment">// notificar a la App que la acción fue exitosa</span>
         <span class="hljs-variable">$out</span>.statusText:=<span class="hljs-string">"Mail sent"</span><span class="hljs-keyword">
 
     Else</span> 
-        <span class="hljs-variable">$out</span>.success:=<span class="hljs-literal">False</span>  <span class="hljs-comment">// notify App that action failed</span>
+        <span class="hljs-variable">$out</span>.success:=<span class="hljs-literal">False</span>  <span class="hljs-comment">// notificar a la App que la acción falló</span>
         <span class="hljs-variable">$out</span>.statusText:=<span class="hljs-string">"Mail not sent"</span><span class="hljs-keyword">
 
     End if</span><span class="hljs-keyword"> 
 
 Else</span> 
 
-    <span class="hljs-variable">$out</span>.success:=<span class="hljs-literal">False</span>  <span class="hljs-comment">// notify App that action failed</span><span class="hljs-keyword">
+    <span class="hljs-variable">$out</span>.success:=<span class="hljs-literal">False</span>  <span class="hljs-comment">// notificar a la App que la acción falló</span><span class="hljs-keyword">
 
 End if</span> 
 
