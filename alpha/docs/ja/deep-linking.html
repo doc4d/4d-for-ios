@@ -76,10 +76,12 @@
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/4D-for-iOS/edit/develop/docs/Features-DeepLinking.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Deep Linking</h1></header><article><div><span><blockquote>
 <p><strong>OBJECTIVES</strong></p>
-<p>Share your iOS app content with your collegues and bring them directly to the desired Detail form / List form</p>
+<p>Share the content iOS app contente with your collegues using Deep Linking.</p>
 </blockquote>
-<p>18R5 comes with a new great feature. You are now able to share the content that you are currently looking at with all your collegues. But you will ask how this works ?</p>
-<p>There are 2 ways of implementing deep linking in iOS: <strong>URL scheme</strong> and <strong>Universal Links</strong>. While URL schemes are a well-known way of implementing deep linking, Universal links are the new way Apple has implemented to easily connect your webpage and your app under the same link.</p>
+<p>18R5 comes with a new great feature. You are now able to share the content that you are currently looking at with all your collegues. But you will ask how this work ??</p>
+<p>Here is an illustration that summarizes deep linking:</p>
+<p><img src="/4d-for-ios/alpha/docs/assets/en/deeplinking/4d-for-ios-deeplinking.png" alt="Deep linking animation"></p>
+<p>There are 2 ways of implementing deep linking in IOS: <strong>URL scheme</strong> and <strong>Universal Links</strong>. While URL schemes are a well-known way of having deep linking, Universal links are the new way Apple has implemented to easily connect your webpage and your app under the same link.</p>
 <p>Here is a comparision between the two options that are offered in the project editor:</p>
 <h2><a class="anchor" aria-hidden="true" id="url-scheme"></a><a href="#url-scheme" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>URL Scheme</h2>
 <table>
@@ -105,20 +107,41 @@
 </tbody>
 </table>
 <h1><a class="anchor" aria-hidden="true" id="custom-url-scheme"></a><a href="#custom-url-scheme" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CUSTOM URL SCHEME</h1>
-<h2><a class="anchor" aria-hidden="true" id="old-but-still-an-efficient-way"></a><a href="#old-but-still-an-efficient-way" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OLD BUT STILL AN EFFICIENT WAY</h2>
+<h2><a class="anchor" aria-hidden="true" id="old-but-efficient-way"></a><a href="#old-but-efficient-way" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OLD BUT EFFICIENT WAY</h2>
 <p>At the simplest level, the URL scheme allows users to open an app from other apps.</p>
-<p>But the true power of URL schemes is in the ability to open a specific page into your app.</p>
+<p>But the true power of URL schemes is in the ability to perform specific actions as your app opens.</p>
 <h2><a class="anchor" aria-hidden="true" id="custom-url-scheme-in-the-project-editor"></a><a href="#custom-url-scheme-in-the-project-editor" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CUSTOM URL SCHEME IN THE PROJECT EDITOR</h2>
-<p>This is very simple to include url scheme into your 4D for iOS project :</p>
+<p>It is very simple to include url scheme to your 4D for iOS :</p>
 <ol>
 <li>Select the Share predefine action from the Action section and select the scope : entity to share a detail form content and table to share a list form</li>
 <li>Activate the Deep Linking feature in the Publishing section fo the project editor</li>
 <li>The Url Scheme is automatically filled in using the app name that you previously defined in the General section but you can still edit it</li>
+</ol>
+<p><img src="/4d-for-ios/alpha/docs/assets/en/deeplinking/deep-linking-project-editor-publishing-section.png" alt="Deep linking Project editor"></p>
+<ol start="4">
+<li>Fill you On Mobile App Action method</li>
 <li>アプリをビルドする</li>
 <li>And thats all you need to do !</li>
 </ol>
-<p><img src="/4d-for-ios/alpha/docs/assets/en/deeplinking/deep-linking-project-editor-publishing-section.png" alt="Deep linking Project editor"></p>
-<p>There you go ! You are now ready to share content with all you collegues. It can be a list form or a detail form.</p>
+<p>There you go ! You are now able to share the content that you are currently looking at with all you collegues. It can be a list form or a detail form.</p>
+<p>Here is a example of the On Mobile App Action :</p>
+<pre><code class="hljs css language-4d">
+
+<span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$0</span>; <span class="hljs-variable">$response</span>)
+<span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$1</span>; <span class="hljs-variable">$request</span>)
+<span class="hljs-variable">$request</span>:=<span class="hljs-variable">$1  </span><span class="hljs-comment">// Informations provided by mobile application</span>
+<span class="hljs-variable">$response</span>:=New object  <span class="hljs-comment">// Informations returned to mobile application</span>
+<span class="hljs-variable">$action</span>:=New object
+<span class="hljs-variable">$action</span>:=MobileAppServer.Action.<span class="hljs-function">new</span>(<span class="hljs-variable">$1</span>)<span class="hljs-keyword">
+Case of</span> 
+    : (<span class="hljs-variable">$request</span>.action=<span class="hljs-string">"shareContact"</span>)
+        <span class="hljs-variable">$response</span>:=<span class="hljs-variable">$action</span>.<span class="hljs-function">shareContext</span>()<span class="hljs-keyword">
+    Else</span> 
+        <span class="hljs-comment">// Unknown action</span><span class="hljs-keyword">
+End case</span> 
+<span class="hljs-variable">$0</span>:=<span class="hljs-variable">$response</span>
+
+</code></pre>
 <h2><a class="anchor" aria-hidden="true" id="using-url-scheme-in-your-4d-for-ios-app"></a><a href="#using-url-scheme-in-your-4d-for-ios-app" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>USING URL SCHEME IN YOUR 4D FOR IOS APP</h2>
 <ol>
 <li>click on the action button to display all you current available actions</li>
@@ -143,10 +166,27 @@
 <li>Select the Share predefine action from the Action section and select the scope : entity to share a detail form content and table to share a list form</li>
 <li>Activate the Deep Linking feature in the Publishing section fo the project editor</li>
 <li>Fill your website url the universal link field</li>
+<li>Fill you On Mobile App Action method</li>
 <li>アプリをビルドする</li>
+<li>Trigger universal links from the the On Web Connection method.</li>
 </ol>
+<p>Here is a example of the On Web Connection method :</p>
+<pre><code class="hljs css language-4d">
+<span class="hljs-variable">$handler</span>:=MobileAppServer.WebHandler.<span class="hljs-function">new</span>()<span class="hljs-keyword">
+Case of</span>
+    : (<span class="hljs-variable">$handler</span>.<span class="hljs-function">handle</span>(<span class="hljs-variable">$1</span>; <span class="hljs-variable">$2</span>; <span class="hljs-variable">$3</span>; <span class="hljs-variable">$4</span>; <span class="hljs-variable">$5</span>; <span class="hljs-variable">$6</span>))
+        <span class="hljs-comment">// Managed by default mobile code</span><span class="hljs-keyword">
+    Else</span>
+        <span class="hljs-comment">// your web code</span><span class="hljs-keyword">
+End case</span>
+
+</code></pre>
 <p>So as you can see, this new feature open a large range of possibilities using 4D for iOS with a minimum effort.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/4d-for-ios/alpha/docs/ja/push-notification.html"><span class="arrow-prev">← </span><span>Push notifications</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#url-scheme">URL Scheme</a></li><li><a href="#universal-links">Universal links</a></li><li><a href="#old-but-still-an-efficient-way">OLD BUT STILL AN EFFICIENT WAY</a></li><li><a href="#custom-url-scheme-in-the-project-editor">CUSTOM URL SCHEME IN THE PROJECT EDITOR</a></li><li><a href="#using-url-scheme-in-your-4d-for-ios-app">USING URL SCHEME IN YOUR 4D FOR IOS APP</a></li><li><a href="#modern-way">MODERN WAY</a></li><li><a href="#universal-links-in-the-project-editor">UNIVERSAL LINKS IN THE PROJECT EDITOR</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/4d-for-ios/alpha/img/logohome.png" alt="4D for iOS"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com/">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<p>//Deep linking is a crucial feature in today’s apps as users consume content faster. This feature allow to bring them directly to the desired location. So I can only advise you to use it in your 4D for iOS apps.</p>
+<h1><a class="anchor" aria-hidden="true" id="push-notification"></a><a href="#push-notification" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PUSH NOTIFICATION</h1>
+<p>The great thing is that Deep Linking is fully working with <a href="push-notification.html">push notifications</a>. This means that you can send Deep links to your users and bring them directly to the right page.</p>
+<p>The documentation is <a href="https://github.com/4d-for-ios/4D-Mobile-App-Server/blob/18R4/Documentation/Classes/PushNotification.md">here</a> to help you manage your push notification and Deep linking feature.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/4d-for-ios/alpha/docs/ja/push-notification.html"><span class="arrow-prev">← </span><span>Push notifications</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#url-scheme">URL Scheme</a></li><li><a href="#universal-links">Universal links</a></li><li><a href="#old-but-efficient-way">OLD BUT EFFICIENT WAY</a></li><li><a href="#custom-url-scheme-in-the-project-editor">CUSTOM URL SCHEME IN THE PROJECT EDITOR</a></li><li><a href="#using-url-scheme-in-your-4d-for-ios-app">USING URL SCHEME IN YOUR 4D FOR IOS APP</a></li><li><a href="#modern-way">MODERN WAY</a></li><li><a href="#universal-links-in-the-project-editor">UNIVERSAL LINKS IN THE PROJECT EDITOR</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/4d-for-ios/alpha/img/logohome.png" alt="4D for iOS"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com/">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
