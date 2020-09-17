@@ -100,7 +100,7 @@
 <tr><th>PROS</th><th>CONS</th></tr>
 </thead>
 <tbody>
-<tr><td>Doesn't require permission</td><td>Static backend with SLL needed</td></tr>
+<tr><td>Doesn't require permission</td><td>Static backend with SSL needed</td></tr>
 <tr><td>Doesn't open the browser</td><td>More complex to implement</td></tr>
 <tr><td>Compatible with Android</td><td></td></tr>
 <tr><td>Fallback URL if app isn't installed</td><td></td></tr>
@@ -123,12 +123,12 @@
 </ol>
 <p><img src="/4d-for-ios/alpha/docs/assets/en/deeplinking/deep-linking-project-editor-publishing-section.png" alt="Deep linking Project editor"></p>
 <ol start="4">
-<li>Fill in your <strong>On Mobile App</strong> Action method</li>
+<li>Fill in your <strong>On Mobile App Action</strong> method</li>
 <li>Build your app</li>
 <li>And thats it!</li>
 </ol>
 <p>You're now able to share the content that you're currently viewing (whether it's a list or detail form) with all of your collegues!</p>
-<p>Here's an example of the <strong>On Mobile App</strong> Action:</p>
+<p>Here's an example of the <strong>On Mobile App Action</strong> method:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">
 var</span> <span class="hljs-variable">$1 </span>: Object  <span class="hljs-comment">// Informations provided by mobile application</span><span class="hljs-keyword">
 var</span> <span class="hljs-variable">$0 </span>: Object  <span class="hljs-comment">// Informations returned to mobile application</span><span class="hljs-keyword">
@@ -177,7 +177,7 @@ End case</span>
 </ul></li>
 <li>Activate the <strong>Deep Linking</strong> feature in the <strong>Publishing</strong> section in the project editor</li>
 <li>Enter your website URL in the <strong>Universal links</strong> field</li>
-<li>Fill in your <strong>On Mobile App</strong> Action method</li>
+<li>Fill in your <strong>On Mobile App Action</strong> method</li>
 <li>Build your app</li>
 <li>Trigger universal inks from the the <strong>On Web Connection</strong> method.</li>
 </ol>
