@@ -76,17 +76,17 @@
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/4D-for-iOS/edit/develop/docs/Features-DeepLinking.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Deep Linking</h1></header><article><div><span><blockquote>
 <p><strong>OBJECTIFS</strong></p>
-<p>Share iOS app content using Deep Linking.</p>
+<p>Partager le contenu de l'application iOS à l'aide de Deep Linking.</p>
 </blockquote>
-<p>4D v18 R5 includes a new great feature! You're now able to share the content that you're currently viewing with all of your collegues. How does it work?</p>
-<p>Here's an illustration demonstrating deep linking:</p>
+<p>4D v18 R5 inclut une extraordinaire nouvelle fonctionnalité ! Vous pouvez désormais partager le contenu que vous visualisez actuellement avec tous vos collègues. Comment ça marche ?</p>
+<p>Voici une illustration illustrant le &quot;deep linking&quot; :</p>
 <p><img src="/4d-for-ios/alpha/docs/assets/en/deeplinking/4d-for-ios-deeplinking.gif" alt="Deep linking animation"></p>
-<p>There are two ways to implement deep linking in iOS: <strong>URL scheme</strong> and <strong>Universal Links</strong>. While URL schemes are a well-known method for deep linking, Universal links are the new way that Apple has implemented to easily connect your webpage and your app under the same link.</p>
-<p>Here's a comparision between the two options which are available in the project editor:</p>
+<p>Il existe deux façons de mettre en œuvre le &quot;deep linking&quot; dans iOS : le <strong>&quot;URL scheme&quot;</strong> et les <strong>&quot;universal links&quot; (liens universels)</strong>. Alors que les &quot;URL schemes&quot; sont une méthode bien connue du &quot;deep linking&quot;, les &quot;universal links&quot;sont la nouvelle méthode mise en œuvre par Apple pour connecter facilement votre page Web à votre application sous le même lien.</p>
+<p>Voici une comparaison des deux options disponibles dans l'éditeur de projet :</p>
 <h2><a class="anchor" aria-hidden="true" id="url-scheme"></a><a href="#url-scheme" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>URL Scheme</h2>
 <table>
 <thead>
-<tr><th>PROS</th><th>CONS</th></tr>
+<tr><th>AVANTAGES</th><th>INCONVÉNIENTS</th></tr>
 </thead>
 <tbody>
 <tr><td>Easy to implement</td><td>Always requires permission</td></tr>
@@ -97,7 +97,7 @@
 <h2><a class="anchor" aria-hidden="true" id="universal-links"></a><a href="#universal-links" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Universal links</h2>
 <table>
 <thead>
-<tr><th>PROS</th><th>CONS</th></tr>
+<tr><th>AVANTAGES</th><th>INCONVÉNIENTS</th></tr>
 </thead>
 <tbody>
 <tr><td>Doesn't require permission</td><td>Static backend with SSL needed</td></tr>
@@ -106,7 +106,7 @@
 <tr><td>Fallback URL if app isn't installed</td><td></td></tr>
 </tbody>
 </table>
-<h1><a class="anchor" aria-hidden="true" id="custom-url-scheme"></a><a href="#custom-url-scheme" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CUSTOM URL SCHEME</h1>
+<h1><a class="anchor" aria-hidden="true" id="url-scheme-personnalisé"></a><a href="#url-scheme-personnalisé" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>URL scheme personnalisé</h1>
 <h2><a class="anchor" aria-hidden="true" id="an-old-but-efficient-approach"></a><a href="#an-old-but-efficient-approach" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AN OLD BUT EFFICIENT APPROACH</h2>
 <p>At the simplest level, URL schemes allow users to open an app from other apps.</p>
 <p>But the true power of URL schemes is in the ability to perform specific actions as your app opens.</p>
