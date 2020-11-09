@@ -11,25 +11,25 @@ title: Criar formato de dados
 > 
 > Clique [aqui](prerequisites.html) para ver o que precisa para começar!
 
-In this tutorial, we'll guide you through the creation of various formatter examples.
+Neste tutorial, vamos guiá-lo através da criação de vários exemplos de formatador.
 
 ## Baixe o Starter Project
 
-To begin, download the **Starter Project**, which includes:
+Para começar, baixe o **Starter Project**, que inclui:
 
-* **integerToImage_Images** and **textToImage_Images** folders that contain images (to use later for formatters that include images)
-* A **Task Management.4dbase** file (with a ready to use mobile app project)
+* Pastas**integerToImage_Images** e **textToImage_Images** que contêm imagens (para usar mais tarde para formatadores que incluem imagens)
+* Um arquivo de **Task Management.4dbase** (com um projeto de app móvel pronto para usar)
 
 <div markdown="1" style="text-align: center; margin-top: 20px; margin-bottom: 20px">
 <a class="button"
 href="https://github.com/4d-for-ios/tutorial-CustomDataFormatter/archive/66d7eea49bc3353f73dbf784ee06283b3a332d0b.zip">PROJETO STARTER - FORMATO PERSONALIZADO</a>
 </div>
 
-You're now ready to create your first formatters!
+Agora você já está pronto para criar seus primeiros formatadores!
 
 ## Crie a pasta formatadores
 
-First, create a *Task Management.4dbase/Resources/Mobile/formatters* folder.
+Primeiro, crie uma pasta *Task Management.4dbase/Resources/Mobile/formatters *.
 
 ![Formatter folder](assets/en/custom-formatter/formatter-folder.png)
 
@@ -37,12 +37,12 @@ First, create a *Task Management.4dbase/Resources/Mobile/formatters* folder.
 
 ### Número inteiro para string
 
-* Create an **integerToString** folder in the formatters folder you've just created.
-* Then create a **manifest.json** file in the **integerToString** folder.
+* Crie uma pasta ** integerToString **na pasta formatadores, que você acabou de criar.
+* Em seguida, crie um arquivo **manifest.json ** na pasta **integerToString**.
 
 ![Formatter folder](assets/en/custom-formatter/formatter-folder-integertostring.png)
 
-Let's look at the contents of the **manifest.json** file:
+Vamos olhar o conteúdo do arquivo de**manifest.json **:
 
 ```json
 {
@@ -56,14 +56,14 @@ Let's look at the contents of the **manifest.json** file:
 }
 ```
 
-1. **name**: the name of the formatter
-2. **type**: the 4D format type you want to use
-3. **binding**: can be **localized text** for strings or **imageNamed** for images
-4. **choiceList**: mapped values
+1. **nome**: o nome do formatador
+2. **tipo**: o tipo de formatador 4D você deseja usar
+3. **binding**: pode ser **texto localizado** para strings de caracteres ou **imageNamed** para imagens
+4. **choiceList**: valores mapeados
 
 ### Inteiro para imagem
 
-* Create an **integerToImage** folder in the **formatters** folder you've created.
+* Crie uma pasta ** integerToString **na pasta  **formatadores **, que você acabou de criar.
 
 * Create a **manifest.json** file in the **integerToImage** folder.
 
@@ -73,7 +73,7 @@ Let's look at the contents of the **manifest.json** file:
 
 ![Formatter images](assets/en/custom-formatter/formatter-images-integertoimage.png)
 
-Let's look at the contents of the **manifest.json** file:
+Vamos olhar o conteúdo do arquivo de**manifest.json **:
 
 
 ```json
@@ -93,10 +93,10 @@ Let's look at the contents of the **manifest.json** file:
     }
 }
 ```
-1. **name**: the name of the formatter
+1. **nome**: o nome do formatador
 2. **type** : the 4D format type you want to use
-3. **binding**: can be **localized text** for strings or **imageNamed** for images
-4. **choiceList**: mapped values
+3. **binding**: pode ser **texto localizado** para strings de caracteres ou **imageNamed** para imagens
+4. **choiceList**: valores mapeados
 5. **assets**: adjust the display size (width and height)
 
 ## Formatadores de Texto
@@ -109,7 +109,7 @@ Let's look at the contents of the **manifest.json** file:
 
 ![Formatter folder](assets/en/custom-formatter/formatter-folder-texttostring.png)
 
-Let's look at the contents of the **manifest.json** file:
+Vamos olhar o conteúdo do arquivo de**manifest.json **:
 
 ```json
 {
@@ -123,10 +123,10 @@ Let's look at the contents of the **manifest.json** file:
 }
 ```
 
-1. **name**: the name of the formatter
-2. **type**: the 4D format type you want to use
-3. **binding**: can be **localized text** for strings or **imageNamed** for images
-4. **choiceList**: mapped values
+1. **nome**: o nome do formatador
+2. **tipo**: o tipo de formatador 4D você deseja usar
+3. **binding**: pode ser **texto localizado** para strings de caracteres ou **imageNamed** para imagens
+4. **choiceList**: valores mapeados
 
 ### Texto para Imagem
 
@@ -140,7 +140,7 @@ Let's look at the contents of the **manifest.json** file:
 
 ![Formatter images](assets/en/custom-formatter/formatter-images-textToImage.png)
 
-Let's look at the contents of the **manifest.json** file:
+Vamos olhar o conteúdo do arquivo de**manifest.json **:
 
 ```json
 {
