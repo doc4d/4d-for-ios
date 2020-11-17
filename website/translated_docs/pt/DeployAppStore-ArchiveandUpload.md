@@ -114,6 +114,6 @@ Quando o processo de validação tenha terminado, está pronto para adicionar se
 
 ![Envie para Revisão](assets/en/deploy-app-store/Export-Compliance-Content-Rights-Advertising-Identifer.png)
 
-* When you've finished with the questions, click **Submit**.
+* Quando tiver terminado com as perguntas, clique **Submit**.
 
 * O tempo médio de revisão da App Store é de apenas dois dias!
