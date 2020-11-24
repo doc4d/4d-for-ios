@@ -93,7 +93,7 @@
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="relaciones-uno-a-muchos"></a><a href="#relaciones-uno-a-muchos" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Relaciones Uno a Muchos</h2>
 <h3><a class="anchor" aria-hidden="true" id="tratar-las-relaciones-de-uno-a-muchos-desde-el-editor-del-proyecto"></a><a href="#tratar-las-relaciones-de-uno-a-muchos-desde-el-editor-del-proyecto" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tratar las relaciones de Uno a Muchos desde el editor del proyecto</h3>
-<p>Now, in recent versions of 4D, you can deal with <strong>One to Many relations</strong> and display a list of related fields in a new page.</p>
+<p>Ahora, en versiones recientes de 4D, puede tratar con <strong>Relaciones Uno a Muchos</strong> y mostrar una lista de campos relacionados en una página nueva.</p>
 <p>Todo lo que tiene que hacer es:</p>
 <ul>
 <li><p>publicar al menos un campo de la tabla de destino (Muchos)</p></li>
@@ -113,8 +113,8 @@
 <p>En 4D 17 R5, la recarga de 4D for iOS se vuelve incremental. Esto significa que solo se actualizarán los datos de la base que sean nuevos, modificados o eliminados. ¡Esta es una gran optimización en términos de tiempo de carga!</p>
 <p>Para hacerlo, 4D for iOS debe optimizar la estructura y crear:</p>
 <ul>
-<li>A <code>__DeletedRecords</code> table to store deleted records</li>
-<li>and <code>__GlobalStamp</code> fields to store modification stamps for each published table in your mobile application</li>
+<li>Una tabla <code>__DeletedRecords</code> para almacenar los registros borrados</li>
+<li>y campos <code>__GlobalStamp</code> para almacenar las modificaciones para cada tabla publicada en su aplicación móvil</li>
 </ul>
 <p>Todo lo que necesita hacer es permitir que 4D for iOS realice los ajustes de estructura necesarios para una actualización optimizada de datos móviles.</p>
 <p>Una vez autorizado, 4D for iOS hará todo el trabajo por usted, y usted se beneficiará completamente de todas las ventajas de la recarga incremental de datos.</p>
