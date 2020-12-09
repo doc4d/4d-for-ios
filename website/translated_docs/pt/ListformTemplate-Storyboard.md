@@ -79,7 +79,7 @@ Com a etiqueta selecionada, dê um duplo-clique em **Height constraint** para co
 
 ![Label height constraint edition](assets/en/custom-listform/label-height-constraint-edition.png)
 
-Change the relation from Equal to **Greater Than or Equal** so it can have a variable height (to handle multiline labels).
+Mude a relação de  Equal para **Greater Than or Equal** para que tenha uma altura variável (para manejar etiquetas multilinhas).
 
 ![Change relation label height constraint](assets/en/custom-listform/change-relation-label-height-constraint.png)
 
@@ -87,7 +87,7 @@ Repita o processo para a segunda etiqueta.
 
 ## Personalizar a etiqueta
 
-Desde o Inspetor de atributos (do lado direito da janela Interface Builder), é possível personalizar as cores de fonte de sua etiqueta. Let's make the second label **Dark Grey Color** :
+Desde o Inspetor de atributos (do lado direito da janela Interface Builder), é possível personalizar as cores de fonte de sua etiqueta. Vamos fazer a segunda etiqueta com a cor **Dark Grey Color** :
 
 ![Label color dark grey](assets/en/custom-listform/label-color-dark-grey.png)
 
@@ -95,11 +95,11 @@ Também pode selecionar a cor dominante para seu app:
 
 ![Label color background color](assets/en/custom-listform/label-color-background-color.png)
 
-Do inspetor de atributos, também pode personalizar a fonte. Select both labels and select Font > Custom > **Helvetica Neue**:
+Do inspetor de atributos, também pode personalizar a fonte. Seleccione as duas etiquetas e selecione Font > Custom > **Helvetica Neue**:
 
 ![Label font custom](assets/en/custom-listform/label-font-custom.png)
 
-To complete the customizations, select both labels and **enter 0 for Lines** in the inspector window. Isso permite que o número de linhas seja ilimitado.
+Para completar a personalização, selecione ambas as etiquetas e **ingresse o valor 0 em Lines** na janela do Inspetor. Isso permite que o número de linhas seja ilimitado.
 
 ![Label lines number](assets/en/custom-listform/label-lines-number.png)
 
@@ -117,7 +117,7 @@ Selecione sua Image View e vá para **Identity inspector** > User Defined Runtim
 
 ![User defined runtime attributes](assets/en/custom-listform/user-defined-runtime-attributes.png)
 
-* **Key Path**: Begin with bindTo to activate binding on the component. Introduza `bindTo.record.___FIELD_1___`
+* **Key Path**: comece com bindTo para ativar a união do componente. Introduza `bindTo.record.___FIELD_1___`
 
 * **Type**: siempre `String`
 
@@ -127,42 +127,42 @@ Selecione sua Image View e vá para **Identity inspector** > User Defined Runtim
 
 ### Etiquetas
 
-Select the first label and add a row in the Defined Runtime Attributes:
+Selecione a primeira etiqueta e adicione uma linha na área "Defined Runtime Attributes":
 
 * **Key Path**: `bindTo.record.___FIELD_2___`
 
 * **Type**: siempre `String`
 
-* **Value**: `___FIELD_2_BINDING_TYPE___`
+* **Valor**: `___FIELD_2_BINDING_TYPE___`
 
 ![Field 2 Binding](assets/en/custom-listform/field-2-binding.png)
 
-Select the second label and add a row in the Defined Runtime Attributes:
+Selecione a segunda etiqueta e agregue uma linha na área "Defined Runtime Attributes":
 
 * **Key Path**: `bindTo.record.___FIELD_3___`
 
 * **Type**: siempre `String`
 
-* **Value**: `___FIELD_3_BINDING_TYPE___`
+* **Valor**: `___FIELD_3_BINDING_TYPE___`
 
 ![Field 3 Binding](assets/en/custom-listform/field-3-binding.png)
 
-You can change the **storyboard display labels** to have better visibility:
+Pode mudar as **etiquetas de storyboard** para ter uma melhor visibilidade:
 
-* Double-click the first label to edit it and enter `___FIELD_2_LABEL___`
-* Double-click the second label to edit it and enter `___FIELD_3_LABEL___`
+* Dê duplo clique na primeira etiqueta para entrar `___FIELD_2_LABEL___`
+* Dê duplo clique na segunda etiqueta para editar e digitar `___FIELD_3_LABEL___`
 
 ![Storyboard label display names](assets/en/custom-listform/storyboard-label-display-name.png)
 
-Go to your project editor, select your list form template from the Forms section, then select Build and Run.
+Vá ao editor de projeto, selecione seu modelo de formulário lista na seção Formulários, depois clique em Criar e Executar
 
-Here is the simulator result :
+Este é o resultado do simulador:
 
 ![Simulator result](assets/en/custom-listform/simulator-result.png)
 
 ## Personalize seu app
 
-The last step is adding a corner radius to the Image View to have a better design.
+O último passo é agregar uma borda arredondada para a Image View para ter um melhor design
 
 Selecione seu Image View e adicione as duas linhas abaixo noa área User Defined Runtime Attributes:
 
@@ -188,7 +188,7 @@ Agora pode construir seu projeto no editor de projetos!
 
 ## Que fazer agora?
 
-In this tutorial, we've covered the basics for creating list form templates. You are now able to create simple templates on your own using the Starter Project ressources. Mas espere - há mais! In the next tutorial, you’ll learn how to build detail form templates! Click on **Final Project** below to download the completed template list folder.
+Neste tutorial cobrimos o básico da criação de modelos de formulário lista. Você já pode criar seus próprios modelos simples usando os recursos do Starter Project. Mas espere - há mais! No próximo tutorial, você vai aprender como construir modelos de formulários detalhados! Clique em **Final Project** abaixo para baixar a pasta que contém a lista completa de modelos.
 
 <div markdown="1" style="text-align: center; margin-top: 20px">
 <a class="button"
