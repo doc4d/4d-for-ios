@@ -79,26 +79,26 @@
 <p>Suba sua aplicação para um servidor seguro.</p>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="passo-1-suba-sua-aplicação"></a><a href="#passo-1-suba-sua-aplicação" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PASSO 1. Suba sua aplicação</h2>
-<p>Upload your app files to a secured server:</p>
+<p>Suba sua aplicação a um servidor seguro:</p>
 <ul>
 <li>Recursos (exibir imagem e imagem em tamanho real)</li>
 <li>Arquivo manifest.plist</li>
 <li>arquivo .ipa</li>
 </ul>
-<p>You can use any cloud storage service to distribute your app as soon as it is secured (Dropbox, Google Drive, etc.).</p>
+<p>Pode usar qualquer serviço de armazenamento na nuvem para distribuir seu app logo que estiver protegida (Dropbox, Google Drive, etc).</p>
 <blockquote>
 <p>**NOTA **</p>
 <p>Seu recurso e suas URLs ipa devem coincidir com as URLs definidas em seu arquivo manifest.plist.</p>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="passo-2-crie-o-link-da-instalação"></a><a href="#passo-2-crie-o-link-da-instalação" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PASSO 2. Crie o link da instalação</h2>
-<p>Create an <strong>ITMS Serices link</strong> (iTUnes Music Store) with the full web address of your manifest file as a parameter:</p>
+<p>Crie um link<strong>ITMS Serices</strong> (iTunes Music Store) com a direção web completa de seu arquivo manifest como parâmetro:</p>
 <pre><code class="hljs">itms-service<span class="hljs-variable">s:</span>//?action=download-manifest&amp;url=http<span class="hljs-variable">s:</span>//mywebserver.<span class="hljs-keyword">com</span>/manifest.plist
 
 </code></pre>
-<p>This link can be used when sending emails, embedded in an html page, or even within a QR code.</p>
-<p>Here is a simple example:</p>
+<p>Esse link pode ser usado para enviar correios eletrônicos, aninhados em uma página HTML ou mesmo um código QR.</p>
+<p>Aqui um exemplo simples:</p>
 <p><img src="/4d-for-ios/Rx/docs/assets/en/deploy-in-house/Contact-demo-app-install.png" alt="Contact demo app install"></p>
-<p><em>The QR Code used for this documentation is not active.</em></p>
+<p><em>O Código QR usado para esta documentação não está ativo.</em></p>
 <h2><a class="anchor" aria-hidden="true" id="passo-3-instale-a-sua-aplicação-em-ios"></a><a href="#passo-3-instale-a-sua-aplicação-em-ios" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PASSO 3. Instale a sua aplicação em iOS</h2>
 <ul>
 <li>Instale o app clicando no link ou escaneando o Código QR</li>
@@ -106,8 +106,8 @@
 <p><img src="/4d-for-ios/Rx/docs/assets/en/deploy-in-house/Scan-and-install.png" alt="Scan and install"></p>
 <ul>
 <li><p>Quando abrir pela primeira vez um app empresarial que instalou manualmente, uma notificação será exibida que indica que o desenvolvedor da aplicação não é de confiança em seu dispositivo.</p></li>
-<li><p>Ignore this message and click <strong>Cancel</strong>.</p></li>
-<li><p>In Settings &gt; General &gt; Profiles or Profiles &amp; Device Management, in the &quot;Enterprise App&quot; heading, the profile for the developer is listed.</p></li>
+<li><p>Ignore essa mensagem e clique <strong>Cancel</strong>.</p></li>
+<li><p>Em Configurações &gt; Geral &gt; Gestão de perfis &amp; Gestão de dispositivo, no cabeçalho &quot;Enterprise App&quot;, se lista o perfil do desenvolvedor.</p></li>
 </ul>
 <p><img src="/4d-for-ios/Rx/docs/assets/en/deploy-in-house/Untrust-developer.png" alt="Untrust developer"></p>
 <ul>
@@ -117,8 +117,8 @@
 <ul>
 <li>Depois pode ir à sua aplicação e abri-la.</li>
 </ul>
-<p>Congratulations ... you can now distribute your first app in-house!</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/4d-for-ios/Rx/docs/pt/deploy-in-house-archive-and-export.html"><span class="arrow-prev">← </span><span>Arquive e exporte seu Projeto</span></a><a class="docs-next button" href="/4d-for-ios/Rx/docs/pt/deploy-app-store-app-store-connect.html"><span>Criar uma ficha em App Store</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#passo-1-suba-sua-aplicação">PASSO 1. Suba sua aplicação</a></li><li><a href="#passo-2-crie-o-link-da-instalação">PASSO 2. Crie o link da instalação</a></li><li><a href="#passo-3-instale-a-sua-aplicação-em-ios">PASSO 3. Instale a sua aplicação em iOS</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/4d-for-ios/Rx/img/logohome.png" alt="4D for iOS"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com/">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<p>Parabéns, já pode distribuir sua primeira aplicação interna!</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/4d-for-ios/Rx/docs/pt/deploy-in-house-archive-and-export.html"><span class="arrow-prev">← </span><span>Arquive e exporte seu Projeto</span></a><a class="docs-next button" href="/4d-for-ios/Rx/docs/pt/deploy-app-store-app-store-connect.html"><span>Criar uma ficha em App Store</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#passo-1-suba-sua-aplicação">PASSO 1. Suba sua aplicação</a></li><li><a href="#passo-2-crie-o-link-da-instalação">PASSO 2. Crie o link da instalação</a></li><li><a href="#passo-3-instale-a-sua-aplicação-em-ios">PASSO 3. Instale a sua aplicação em iOS</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/4d-for-ios/Rx/img/logohome.png" alt="4D for iOS"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com/">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2021 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
