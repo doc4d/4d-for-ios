@@ -259,4 +259,4 @@ Para su comodidad, el formulario de Edición incluye algunas **funcionalidades e
 
 * Otro [tutorial](action-custom-template.html) lo guiará para integrar los **TAG de acción** en las plantillas personalizadas.
 
-* A final [tutorial](using-parameters.html) will guide you through the **action parameters definition**.
+* Un [tutorial](using-parameters.html) final lo guiará a lo largo del proceso de **definición de los parámetros de una acción**.
