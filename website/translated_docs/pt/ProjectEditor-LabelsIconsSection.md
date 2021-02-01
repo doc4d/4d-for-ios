@@ -48,9 +48,9 @@ Esses elementos serão mostrados em formulários detalhados e lista, dependendo 
 
 Para Relações, poderá definir as propriedades abaixo:
 
-* **Short and Long labels:** displayed in the Relation button that allows to open a related table
-* **Icons:** displayed at the left of the Relation button
-* **Title:** that will be displayed on top of the destination view when using a relation. A [tutorial](one-to-many-relations-title-definition.html) is available to guide you through the Title definition process
+* **Etiquetas curtas e longas:** exibidas no botão Relação que permite abrir uma tabela relacionada
+* **Icones:** exibidos à esquerda do botão Relação
+* **Título:** será exibido no topo da vista destino quando usar a relação. Um [tutorial](one-to-many-relations-title-definition.html) está disponível para guiá-lo pelo processo de definição de Título
 
 
 
