@@ -132,16 +132,93 @@ href="https://github.com/4d-for-ios/tutorial-CustomLoginForm/archive/main.zip">S
 <p>From here check the Authentication feature and Create the database method clicking on the Create button.</p>
 <p><img src="/4d-for-ios/alpha/docs/assets/en/custom-login-form/publishing-section.png" alt="Publishing section"></p>
 <p>This is how it should look to authenticate users :</p>
-<pre><code class="hljs"><span class="hljs-keyword">var</span> <span class="hljs-variable">$0 </span>: Object<span class="hljs-keyword">var</span> <span class="hljs-variable">$1 </span>: Object<span class="hljs-keyword">var</span> <span class="hljs-variable">$request</span>; <span class="hljs-variable">$response </span>: Object<span class="hljs-variable">$request</span>:=<span class="hljs-variable">$1  </span><span class="hljs-comment">// Informations provided by mobile application</span><span class="hljs-variable">$response</span>:=New object  <span class="hljs-comment">// Informations returned to mobile application</span><span class="hljs-variable">$entity</span>:=ds.User.<span class="hljs-function">query</span>(<span class="hljs-string">"login = :1"</span>; <span class="hljs-variable">$request</span>.email)<span class="hljs-keyword">If</span> (<span class="hljs-variable">$entity</span>.length&gt;<span class="hljs-number">0</span>) <span class="hljs-variable">$password</span>:=<span class="hljs-variable">$entity</span>.<span class="hljs-function">first</span>().password  <span class="hljs-comment">// Get the password from the table</span><span class="hljs-keyword">       If</span> (<span class="hljs-function">Generate digest</span>(<span class="hljs-variable">$password</span>; SHA256 digest; *)=<span class="hljs-variable">$request</span>.parameters.token)        <span class="hljs-comment">// Comparison with what you receive in the request</span>            <span class="hljs-variable">$response</span>.success:=<span class="hljs-literal">True</span><span class="hljs-keyword">    Else</span>       <span class="hljs-variable">$response</span>.success:=<span class="hljs-literal">False</span><span class="hljs-keyword">   End if</span><span class="hljs-keyword"> Else</span>   <span class="hljs-variable">$response</span>.success:=<span class="hljs-literal">False</span><span class="hljs-keyword">End if</span> <span class="hljs-comment">// Optional message to display on mobile App.</span><span class="hljs-keyword">If</span> (<span class="hljs-variable">$response</span>.success) <span class="hljs-variable">$response</span>.statusText:=<span class="hljs-string">"You are successfully authenticated"</span><span class="hljs-keyword">Else</span>    <span class="hljs-variable">$response</span>.statusText:=<span class="hljs-string">"Sorry, you are not authorized to use this application."</span><span class="hljs-keyword">End if</span> <span class="hljs-variable">$0</span>:=<span class="hljs-variable">$response</span>
+<pre><code class="hljs"><span class="hljs-keyword">var</span> <span class="hljs-variable">$0 </span>: Object<span class="hljs-keyword">
+var</span> <span class="hljs-variable">$1 </span>: Object<span class="hljs-keyword">
+
+var</span> <span class="hljs-variable">$request</span>; <span class="hljs-variable">$response </span>: Object
+
+<span class="hljs-variable">$request</span>:=<span class="hljs-variable">$1  </span><span class="hljs-comment">// Informations provided by mobile application</span>
+<span class="hljs-variable">$response</span>:=New object  <span class="hljs-comment">// Informations returned to mobile application</span>
+
+
+<span class="hljs-variable">$entity</span>:=ds.User.<span class="hljs-function">query</span>(<span class="hljs-string">"login = :1"</span>; <span class="hljs-variable">$request</span>.email)<span class="hljs-keyword">
+If</span> (<span class="hljs-variable">$entity</span>.length&gt;<span class="hljs-number">0</span>)
+    <span class="hljs-variable">$password</span>:=<span class="hljs-variable">$entity</span>.<span class="hljs-function">first</span>().password  <span class="hljs-comment">// Get the password from the table</span><span class="hljs-keyword">
+    
+    If</span> (<span class="hljs-function">Generate digest</span>(<span class="hljs-variable">$password</span>; SHA256 digest; *)=<span class="hljs-variable">$request</span>.parameters.token)
+        <span class="hljs-comment">// Comparison with what you receive in the request</span>
+        
+        <span class="hljs-variable">$response</span>.success:=<span class="hljs-literal">True</span><span class="hljs-keyword">
+    Else</span> 
+        <span class="hljs-variable">$response</span>.success:=<span class="hljs-literal">False</span><span class="hljs-keyword">
+    End if</span><span class="hljs-keyword"> 
+Else</span> 
+    <span class="hljs-variable">$response</span>.success:=<span class="hljs-literal">False</span><span class="hljs-keyword">
+End if</span> 
+
+<span class="hljs-comment">// Optional message to display on mobile App.</span><span class="hljs-keyword">
+If</span> (<span class="hljs-variable">$response</span>.success)
+    <span class="hljs-variable">$response</span>.statusText:=<span class="hljs-string">"You are successfully authenticated"</span><span class="hljs-keyword">
+Else</span> 
+    <span class="hljs-variable">$response</span>.statusText:=<span class="hljs-string">"Sorry, you are not authorized to use this application."</span><span class="hljs-keyword">
+End if</span> 
+
+<span class="hljs-variable">$0</span>:=<span class="hljs-variable">$response</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="step-4-project-methods"></a><a href="#step-4-project-methods" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>STEP 4. Project Methods</h2>
 <h3><a class="anchor" aria-hidden="true" id="authentication-method"></a><a href="#authentication-method" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Authentication method</h3>
 <p>Here we get the variable from the form and check if those values exist in the User table :</p>
-<pre><code class="hljs"><span class="hljs-comment">//Retrieve all the variables of the form</span><span class="hljs-function">C_TEXT</span>(<span class="hljs-variable">$1</span>)<span class="hljs-function">ARRAY TEXT</span>(<span class="hljs-variable">$arrNames</span>; <span class="hljs-number">0</span>)<span class="hljs-function">ARRAY TEXT</span>(<span class="hljs-variable">$arrVals</span>; <span class="hljs-number">0</span>)<span class="hljs-comment">// Get the login and pswd variable from the authentication web page</span><span class="hljs-function">WEB GET VARIABLES</span>(<span class="hljs-variable">$arrNames</span>; <span class="hljs-variable">$arrVals</span>)<span class="hljs-variable">$VLOGIN</span>:=<span class="hljs-function">Find in array</span>(<span class="hljs-variable">$arrNames</span>; <span class="hljs-string">"VLOGIN"</span>)<span class="hljs-variable">$VPASS</span>:=<span class="hljs-function">Find in array</span>(<span class="hljs-variable">$arrNames</span>; <span class="hljs-string">"VPASS"</span>)<span class="hljs-comment">// Shared variable creation to access to it in the code</span><span class="hljs-keyword">Use</span> (Storage)  Storage.session:=<span class="hljs-function">New shared object</span>(<span class="hljs-string">"login"</span>; <span class="hljs-string">""</span>; <span class="hljs-string">"password"</span>; <span class="hljs-string">""</span>)<span class="hljs-keyword">End use</span> <span class="hljs-comment">// Search if the login / pswd exist and if the user can be authentified</span><span class="hljs-variable">$entity</span>:=ds.User.<span class="hljs-function">query</span>(<span class="hljs-string">"login = :1 and password = :2"</span>; <span class="hljs-variable">$arrVals{</span><span class="hljs-variable">$VLOGIN}</span>; <span class="hljs-variable">$arrVals{</span><span class="hljs-variable">$VPASS}</span>)<span class="hljs-comment">// If the login / pswd exist the login / pswd are initialised in the share variable</span><span class="hljs-keyword">If</span> (<span class="hljs-variable">$entity</span>.length&gt;<span class="hljs-number">0</span>)<span class="hljs-keyword">   Use</span> (Storage.session)      Storage.session.login:=<span class="hljs-variable">$arrVals{</span><span class="hljs-variable">$VLOGIN}</span>       Storage.session.password:=<span class="hljs-variable">$arrVals{</span><span class="hljs-variable">$VPASS}</span>     Storage.session.success:=<span class="hljs-literal">True</span><span class="hljs-keyword">  End use</span>       <span class="hljs-comment">// Redirection to the web page</span><span class="hljs-function"> WEB SEND HTTP REDIRECT</span>(<span class="hljs-string">"/createQRCode.html"</span>)<span class="hljs-keyword">   Else</span>  <span class="hljs-comment">// Back to the home page</span><span class="hljs-keyword">   Use</span> (Storage.session)      Storage.session.success:=<span class="hljs-literal">False</span><span class="hljs-keyword"> End use</span> <span class="hljs-function">   WEB SEND HTTP REDIRECT</span>(<span class="hljs-string">"/"</span>)<span class="hljs-keyword">End if</span> 
+<pre><code class="hljs"><span class="hljs-comment">//Retrieve all the variables of the form</span>
+<span class="hljs-function">C_TEXT</span>(<span class="hljs-variable">$1</span>)
+<span class="hljs-function">ARRAY TEXT</span>(<span class="hljs-variable">$arrNames</span>; <span class="hljs-number">0</span>)
+<span class="hljs-function">ARRAY TEXT</span>(<span class="hljs-variable">$arrVals</span>; <span class="hljs-number">0</span>)
+
+<span class="hljs-comment">// Get the login and pswd variable from the authentication web page</span>
+<span class="hljs-function">WEB GET VARIABLES</span>(<span class="hljs-variable">$arrNames</span>; <span class="hljs-variable">$arrVals</span>)
+<span class="hljs-variable">$VLOGIN</span>:=<span class="hljs-function">Find in array</span>(<span class="hljs-variable">$arrNames</span>; <span class="hljs-string">"VLOGIN"</span>)
+<span class="hljs-variable">$VPASS</span>:=<span class="hljs-function">Find in array</span>(<span class="hljs-variable">$arrNames</span>; <span class="hljs-string">"VPASS"</span>)
+
+<span class="hljs-comment">// Shared variable creation to access to it in the code</span><span class="hljs-keyword">
+Use</span> (Storage)
+    Storage.session:=<span class="hljs-function">New shared object</span>(<span class="hljs-string">"login"</span>; <span class="hljs-string">""</span>; <span class="hljs-string">"password"</span>; <span class="hljs-string">""</span>)<span class="hljs-keyword">
+End use</span> 
+
+<span class="hljs-comment">// Search if the login / pswd exist and if the user can be authentified</span>
+<span class="hljs-variable">$entity</span>:=ds.User.<span class="hljs-function">query</span>(<span class="hljs-string">"login = :1 and password = :2"</span>; <span class="hljs-variable">$arrVals{</span><span class="hljs-variable">$VLOGIN}</span>; <span class="hljs-variable">$arrVals{</span><span class="hljs-variable">$VPASS}</span>)
+
+<span class="hljs-comment">// If the login / pswd exist the login / pswd are initialised in the share variable</span><span class="hljs-keyword">
+If</span> (<span class="hljs-variable">$entity</span>.length&gt;<span class="hljs-number">0</span>)<span class="hljs-keyword">
+    Use</span> (Storage.session)
+        Storage.session.login:=<span class="hljs-variable">$arrVals{</span><span class="hljs-variable">$VLOGIN}</span>
+        Storage.session.password:=<span class="hljs-variable">$arrVals{</span><span class="hljs-variable">$VPASS}</span>
+        Storage.session.success:=<span class="hljs-literal">True</span><span class="hljs-keyword">
+    End use</span> 
+    
+    <span class="hljs-comment">// Redirection to the web page</span>
+<span class="hljs-function">    WEB SEND HTTP REDIRECT</span>(<span class="hljs-string">"/createQRCode.html"</span>)<span class="hljs-keyword">
+    
+Else</span> 
+    <span class="hljs-comment">// Back to the home page</span><span class="hljs-keyword">
+    Use</span> (Storage.session)
+        Storage.session.success:=<span class="hljs-literal">False</span><span class="hljs-keyword">
+    End use</span> 
+<span class="hljs-function">    WEB SEND HTTP REDIRECT</span>(<span class="hljs-string">"/"</span>)<span class="hljs-keyword">
+End if</span> 
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="generateqrcode-method"></a><a href="#generateqrcode-method" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GenerateQRCODE method</h3>
 <p>Here we generated a vqrCodeData that is a json that include the user email and the encrtypted password that are the data that are going to be emebeded in the QRCode.</p>
-<pre><code class="hljs"><span class="hljs-comment">// Use storage variable</span><span class="hljs-meta"><span class="hljs-meta-keyword">$currentUserEmail</span>:=Storage.session.login</span><span class="hljs-meta"><span class="hljs-meta-keyword">$token</span>:=Storage.session.password</span><span class="hljs-comment">// Token encryption (using base 64 url)</span><span class="hljs-meta"><span class="hljs-meta-keyword">$digest</span>:=Generate digest($token; SHA256 digest; *)</span><span class="hljs-comment">// Process variable creation (json value with mail and encrypted pswd)</span>vqrCodeData:=JSON Stringify(New object(<span class="hljs-string">"email"</span>; <span class="hljs-symbol">$</span>currentUserEmail; <span class="hljs-string">"token"</span>; <span class="hljs-symbol">$</span>digest))<span class="hljs-comment">// Redirection to the QRcode webpage</span>WEB SEND HTTP REDIRECT(<span class="hljs-string">"/generatedQRCode.shtml"</span>)
+<pre><code class="hljs"><span class="hljs-comment">// Use storage variable</span>
+<span class="hljs-meta"><span class="hljs-meta-keyword">$currentUserEmail</span>:=Storage.session.login</span>
+<span class="hljs-meta"><span class="hljs-meta-keyword">$token</span>:=Storage.session.password</span>
+
+<span class="hljs-comment">// Token encryption (using base 64 url)</span>
+<span class="hljs-meta"><span class="hljs-meta-keyword">$digest</span>:=Generate digest($token; SHA256 digest; *)</span>
+
+<span class="hljs-comment">// Process variable creation (json value with mail and encrypted pswd)</span>
+vqrCodeData:=JSON Stringify(New object(<span class="hljs-string">"email"</span>; <span class="hljs-symbol">$</span>currentUserEmail; <span class="hljs-string">"token"</span>; <span class="hljs-symbol">$</span>digest))
+
+<span class="hljs-comment">// Redirection to the QRcode webpage</span>
+WEB SEND HTTP REDIRECT(<span class="hljs-string">"/generatedQRCode.shtml"</span>)
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="step-5-website"></a><a href="#step-5-website" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>STEP 5. Website</h2>
 <p>For this tutorial, three html pages are already available into the WebFolder folder:</p>
@@ -193,17 +270,17 @@ href="https://github.com/4d-for-ios/tutorial-CustomLoginForm/archive/main.zip">S
 <h2><a class="anchor" aria-hidden="true" id="step-6-get-the-entire-senario"></a><a href="#step-6-get-the-entire-senario" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>STEP 6. Get the entire senario</h2>
 <h3><a class="anchor" aria-hidden="true" id="login-into-your-website-home-page"></a><a href="#login-into-your-website-home-page" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Login into your website home page</h3>
 <p>Enter <strong><a href="mailto:david@4D.com">david@4D.com</a></strong> in the Login field and <strong>TEST</strong> in the Password field in your website home page and click Login (Which is an existing record in the User table).</p>
-<p><img src="/4d-for-ios/alpha/docs/assets/en/login-form/login-form.png" alt="Login form"></p>
+<p><img src="/4d-for-ios/alpha/docs/assets/en/custom-login-form/login-form.png" alt="Login form"></p>
 <h3><a class="anchor" aria-hidden="true" id="generate-the-qrcode"></a><a href="#generate-the-qrcode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Generate the QRCode</h3>
 <p>Click on the <strong>HERE</strong> button to generate the QRCode.</p>
-<p><img src="/4d-for-ios/alpha/docs/assets/en/login-form/create-QRCode.png" alt="Create QRCode"></p>
+<p><img src="/4d-for-ios/alpha/docs/assets/en/custom-login-form/create-QRCode.png" alt="Create QRCode"></p>
 <p>You will be redirected to the final QRCode page.</p>
-<p><img src="/4d-for-ios/alpha/docs/assets/en/login-form/generated-QRCode.png" alt="Generated QRCode"></p>
+<p><img src="/4d-for-ios/alpha/docs/assets/en/custom-login-form/generated-QRCode.png" alt="Generated QRCode"></p>
 <h3><a class="anchor" aria-hidden="true" id="build-your-app-on-a-real-device"></a><a href="#build-your-app-on-a-real-device" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Build your app on a real device</h3>
 <p>Install your mobile app from the project editor on a real device.</p>
 <p>Then the custom login form will appear to allow you scanning the generated QRCode and login into your mobile app.</p>
 <p>Here is the final result :</p>
-<p><img src="/4d-for-ios/alpha/docs/assets/en/login-form/sign-in-with-QRCode.gif" alt="Sign in with QRCode"></p>
+<p><img src="/4d-for-ios/alpha/docs/assets/en/custom-login-form/sign-in-with-QRCode.gif" alt="Sign in with QRCode"></p>
 <h2><a class="anchor" aria-hidden="true" id="step-7-where-to-go-from-here"></a><a href="#step-7-where-to-go-from-here" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>STEP 7. Where to go from here?</h2>
 <p>The step 2 covers how to include easily any custom login form in your mobile app. So you should now be able just followin this step, to create your own custom login form and use it on your own.</p>
 <p>Reading next steps you are now able to include the Sign In With QRCode login and allow your authenticated users to scan a QRCode to login into their app.</p>
