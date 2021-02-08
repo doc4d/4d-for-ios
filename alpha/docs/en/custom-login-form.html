@@ -85,7 +85,7 @@
 <p>4D 18R6 minimum</p>
 <p>Real iOS mobile device (simulator do not simulate camera)</p>
 </blockquote>
-<p>This tutorial will allow you to quickly and easily integrate a custom login form.</p>
+<p>This tutorial will allow you to quickly and easily integrate a custom <a href="https://4d-for-ios.github.io/gallery/#/type/form-login">login form</a>.</p>
 <p><em>Scenario: You already have a website with authenticated users and you want then to login into their app just by scanning a QRCode</em></p>
 <blockquote>
 <p><strong>NOTE</strong></p>
@@ -140,12 +140,11 @@ var</span> <span class="hljs-variable">$request</span>; <span class="hljs-variab
 <span class="hljs-variable">$request</span>:=<span class="hljs-variable">$1  </span><span class="hljs-comment">// Informations provided by mobile application</span>
 <span class="hljs-variable">$response</span>:=New object  <span class="hljs-comment">// Informations returned to mobile application</span>
 
-
 <span class="hljs-variable">$entity</span>:=ds.User.<span class="hljs-function">query</span>(<span class="hljs-string">"login = :1"</span>; <span class="hljs-variable">$request</span>.email)<span class="hljs-keyword">
 If</span> (<span class="hljs-variable">$entity</span>.length&gt;<span class="hljs-number">0</span>)
     <span class="hljs-variable">$password</span>:=<span class="hljs-variable">$entity</span>.<span class="hljs-function">first</span>().password  <span class="hljs-comment">// Get the password from the table</span><span class="hljs-keyword">
     
-    If</span> (<span class="hljs-function">Generate digest</span>(<span class="hljs-variable">$password</span>; SHA256 digest; *)=<span class="hljs-variable">$request</span>.parameters.token)
+    If</span> (<span class="hljs-function">Verify password hash</span>(<span class="hljs-variable">$password</span>; <span class="hljs-variable">$request</span>.parameters.token))
         <span class="hljs-comment">// Comparison with what you receive in the request</span>
         
         <span class="hljs-variable">$response</span>.success:=<span class="hljs-literal">True</span><span class="hljs-keyword">
@@ -208,14 +207,13 @@ End if</span>
 <h3><a class="anchor" aria-hidden="true" id="generateqrcode-method"></a><a href="#generateqrcode-method" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GenerateQRCODE method</h3>
 <p>Here we generated a vqrCodeData that is a json that include the user email and the encrtypted password that are the data that are going to be emebeded in the QRCode.</p>
 <pre><code class="hljs"><span class="hljs-comment">// Use storage variable</span>
-<span class="hljs-meta"><span class="hljs-meta-keyword">$currentUserEmail</span>:=Storage.session.login</span>
-<span class="hljs-meta"><span class="hljs-meta-keyword">$token</span>:=Storage.session.password</span>
-
-<span class="hljs-comment">// Token encryption (using base 64 url)</span>
-<span class="hljs-meta"><span class="hljs-meta-keyword">$digest</span>:=Generate digest($token; SHA256 digest; *)</span>
+$currentUserEmail:=Storage.session.login
+$token:=Storage.session.password
+$options:=<span class="hljs-literal">New</span> object(<span class="hljs-string">"algorithm"</span>; <span class="hljs-string">"bcrypt"</span>; <span class="hljs-string">"cost"</span>; <span class="hljs-number">4</span>)
+$hash:=Generate password hash($token; $options)
 
 <span class="hljs-comment">// Process variable creation (json value with mail and encrypted pswd)</span>
-vqrCodeData:=JSON Stringify(New object(<span class="hljs-string">"email"</span>; <span class="hljs-symbol">$</span>currentUserEmail; <span class="hljs-string">"token"</span>; <span class="hljs-symbol">$</span>digest))
+vqrCodeData:=JSON Stringify(<span class="hljs-literal">New</span> object(<span class="hljs-string">"email"</span>; $currentUserEmail; <span class="hljs-string">"token"</span>; $hash))
 
 <span class="hljs-comment">// Redirection to the QRcode webpage</span>
 WEB SEND HTTP REDIRECT(<span class="hljs-string">"/generatedQRCode.shtml"</span>)
