@@ -146,7 +146,7 @@ Aqui estão os diferentes **Formatos** que pode selecionar para um parâmetro:
 
 4D for iOS inclui três ações (pré-definidas) para administrar o conteúdo de sua aplicação:
 
-* Edit
+* Editar
 * Ação de Adicionar
 * Ação de eliminar
 
@@ -259,4 +259,4 @@ Para sua comodidade, o formulário de Edição inclui algumas **funcionalidades 
 
 * Outro [tutorial](action-custom-template.html) o guiará para integrar as **TAG de ação** nos modelos personalizados.
 
-* A final [tutorial](using-parameters.html) will guide you through the **action parameters definition**.
+* Um [tutorial](using-parameters.html) final o guiará ao longo do processo **definição dos parâmetros de uma ação**.
