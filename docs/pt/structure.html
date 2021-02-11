@@ -117,8 +117,8 @@
 <p>Em 4D 17R5, o reload (recarga) de 4D for iOS se torna incremental. Isso significa que apenas dados novos, modificados ou apagados do banco de dados serão atualizados. Essa é uma grande melhoria em tempos de carregamento!</p>
 <p>Para fazer isso, 4D for iOS precisa de otimizações de estrutura e criar:</p>
 <ul>
-<li>A <code>__DeletedRecords</code> table to store deleted records</li>
-<li>and <code>__GlobalStamp</code> fields to store modification stamps for each published table in your mobile application</li>
+<li>Uma tabela  <code>__DeletedRecords</code> para armazenar registros apagados</li>
+<li>e campos <code>__GlobalStamp</code> para armazenar as modificações para cada tabela publicada em sua aplicação móvel</li>
 </ul>
 <p>Tudo que precisa fazer é autorizar que 4D for iOS faça as mudanças de estrutura necessárias para uma atualização de dados móveis otimizada.</p>
 <p>Quando autorizado, 4D for iOS vai fazer todo o trabalho para você, e vai se beneficiar de todas as vantagens de recarga de dados incremental.</p>
