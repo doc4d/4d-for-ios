@@ -76,24 +76,24 @@
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/4D-for-iOS/edit/master/docs/Features-PushNotification.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Push notifications</h1></header><article><div><span><blockquote>
 <p><strong>OBJECTIVES</strong></p>
-<p>Integrate push notification to your 4d for iOS apps</p>
+<p>Integrate push notifications to your 4d for iOS apps</p>
 </blockquote>
 <blockquote>
 <p><strong>PREREQUISITES</strong></p>
 <p>The <a href="https://github.com/4d-for-ios/4D-Mobile-App-Server">4D Mobile App Server</a> component that allows to send push notifications is integrated in 4D single-user and 4D Server.</p>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="what-is-a-push-notification"></a><a href="#what-is-a-push-notification" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What is a push notification?</h2>
-<p>On a mobile phone, a push notification is an alert message, received via an application, that you can open, delete, allow or block. It can be very useful for example to notify your app users that a new version is available.</p>
-<p>But what about the architecture to implement, in order to integrate this functionality into a mobile application? And what is the process of a push notification, from creation to display on the user's mobile?</p>
+<p>On a mobile phone, a push notification is an alert message received via an application, that you can open, delete, allow or block. It can be very useful to notify your app users that a new version is available, for example.</p>
+<p>But what about the architecture that needs to be implemented, in order to integrate this functionality into a mobile application? And what is the process of a push notification, from creation to display, on the user's mobile?</p>
 <h2><a class="anchor" aria-hidden="true" id="technical-architecture"></a><a href="#technical-architecture" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Technical architecture</h2>
 <p>Here are the different elements needed to create, send and receive a mobile push notification:</p>
 <p><img src="/4d-for-ios/docs/assets/en/push-notification/4D-for-ios-push-notification.png" alt="Push notification process"></p>
 <h2><a class="anchor" aria-hidden="true" id="はじめにお読みください"></a><a href="#はじめにお読みください" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>はじめにお読みください</h2>
-<p>In order to send push notifications, an AuthKey_XXXYYY.p8 authentication file from Apple is required.</p>
+<p>To send push notifications, an AuthKey_XXXYYY.p8 authentication file from Apple is required.</p>
 <ul>
 <li><p>First, go to Apple developer account page, sign in, then select Certificates, IDs &amp; Profiles.</p></li>
 <li><p>You will then be able to generate your push certificate and to download it.</p></li>
-<li><p>Finally, activate the Push notification feature integrate your certificate in your 4D for iOS project from the Publishing section.</p></li>
+<li><p>Finally, activate the Push notification feature to integrate your certificate in your 4D for iOS project from the Publishing section.</p></li>
 </ul>
 <p><img src="/4d-for-ios/docs/assets/en/push-notification/push-notification-publishing-section.png" alt="Publishing section"></p>
 <p>You can find more information about this process <a href="https://github.com/4d-for-ios/4D-Mobile-App-Server/blob/master/Documentation/Classes/PushNotification.md">here</a> in the component documentation.</p>
@@ -107,7 +107,7 @@
 <span class="hljs-variable">$response</span>:=<span class="hljs-variable">$pushNotification</span>.<span class="hljs-function">send</span>(<span class="hljs-variable">$notification</span>;<span class="hljs-string">"test@4d.com"</span>)
 
 </code></pre>
-<p>It's as simple as that!</p>
+<p>It couldn't be any easier!</p>
 <h2><a class="anchor" aria-hidden="true" id="push-notification-with-data-synchronization"></a><a href="#push-notification-with-data-synchronization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Push notification with data synchronization</h2>
 <p>With a push notification, you can also launch a synchronization to update your data.</p>
 <p>For example, if your application has a delivery tracking option, the delivery information will be updated in the database thanks to a notification sent to the customer. This notification, containing a request to synchronize the data, will enable the customer to get the modified data on their smartphone.</p>
