@@ -237,15 +237,14 @@
 </ul>
 </blockquote>
 <h3><a class="anchor" aria-hidden="true" id="ações-modo-offline"></a><a href="#ações-modo-offline" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ações modo offline</h3>
-<p>Ações Offline são petições de Action (Add, Edit, Delete) enviadas pelo usuário quando trabalharem no app iOS offline e que serão sincronizadas quando o usuário estiver online.</p>
-<p>Por exemplo, um usuário pode executar várias ações relacionadas a seus dados (adicionar um nome de contato, editar um número de telefone, apagar uma fatura antiga, etc) em seu app iOS mesmo se estiverem offline ou se não puderem contactar o servidor, e terem todas as ações pendentes sincronizarem consistentemente assim que a rede estiver acessível.</p>
-<p>Para fazer isso, todas as ações pendentes serão visualizadas e abertas com:</p>
-<p>•   <em>Tela de Configurações</em></p>
-<p>Exibe um sumário e a história de todas as ações pendentes ou completas na aba &quot;Request log&quot;.</p>
-<p><img src="/4d-for-ios/alpha/docs/assets/en/project-editor/settings-screen.png" alt="Action section"></p>
-<p>•   <em>Formulários Lista &amp; Detalhado</em></p>
-<p>Exibe todas as petições pendentes relacionadas à tabela ou à entidade que está vendo no momento.</p>
-<p><img src="/4d-for-ios/alpha/docs/assets/en/project-editor/list-detail-form.png" alt="Action section"></p>
+<p>Offline actions enable the user of an iOS app to send action requests to the server even if he’s working offline or if the network is unreachable. When they are sent to the server, these actions are placed in the Pending actions list, until the network is accessible. Once the user is online, all pending actions are consistently synchronized, executed and visible.</p>
+<p>All pending actions can be visualized and opened from:</p>
+<p>•   <em>The Settings screen</em></p>
+<p>It displays a summary and a history of all pending and completed actions.</p>
+<p><img src="/4d-for-ios/alpha/docs/assets/en/project-editor/Settings-screen-all.png" alt="Action section"></p>
+<p>•   <em>The List &amp; Detail forms</em></p>
+<p>They display all the pending requests related to the table or to the entity that you are currently viewing.</p>
+<p><img src="/4d-for-ios/alpha/docs/assets/en/project-editor/detail.png" alt="Action section"></p>
 <blockquote>
 <p><strong>Nota</strong></p>
 <p>A ação pré-definida &quot;Share&quot; só é executável no modo online.</p>
